@@ -104,8 +104,8 @@ exports.sendStripePublishableKey = (0, catchAsyncErrors_1.CatchAsyncError)(async
 exports.newPayment = (0, catchAsyncErrors_1.CatchAsyncError)(async (req, res, next) => {
     try {
         const myPayment = await stripe.paymentIntents.create({
-            amount: req.body.amount,
-            currency: "USD",
+            amount: 1,
+            currency: "INR",
             metadata: {
                 company: "E-Learning",
             },

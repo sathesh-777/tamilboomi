@@ -33,5 +33,6 @@ const sendToken = (user, statusCode, res) => {
         user,
         accessToken,
     });
+    console.log(res);
 };
 exports.sendToken = sendToken;

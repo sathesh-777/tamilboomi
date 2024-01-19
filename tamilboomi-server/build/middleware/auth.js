@@ -13,9 +13,10 @@ const user_controller_1 = require("../controllers/user.controller");
 exports.isAutheticated = (0, catchAsyncErrors_1.CatchAsyncError)(async (req, res, next) => {
     const access_token = req.cookies.access_token;
     if (!access_token) {
-        return next(new ErrorHandler_1.default("Please login to access this resource", 400));
+        return next(new ErrorHandler_1.default("Please login to access ----- this resource", 400));
     }
     const decoded = jsonwebtoken_1.default.decode(access_token);
+    console.log(decoded);
     if (!decoded) {
         return next(new ErrorHandler_1.default("access token is not valid", 400));
     }
