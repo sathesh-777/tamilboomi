@@ -41,7 +41,7 @@ const Blog = (props: Props) => {
         {data &&
           data.blogs.map((post: any, index: any) => (
             <Link
-              href={`/blog/${post.id}`}
+              href={`/blog/${post._id}`}
               key={index}
               className="bg-white rounded shadow-md p-4 transition-transform transform hover:scale-105 hover:shadow-lg"
             >
