@@ -68,7 +68,7 @@ export default function OrdersAnalytics({ isDashboard }: Props) {
             className={isDashboard ? "mt-[0px] pl-[40px] mb-2" : "mt-[50px]"}
           >
             <h1
-              className={`${styles.title} text-white ${
+              className={`${styles.title} text-black ${
                 isDashboard && "!text-[20px]"
               } px-5 !text-start`}
             >

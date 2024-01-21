@@ -32,7 +32,7 @@ const Hero: FC<Props> = (props) => {
       <div className=" 1000px:flex 1000px:px-32 1000px:py-20 1000px:flex-row-reverse justify-center items-center">
       <div className="flex justify-center items-center w-full">
         <Image
-           src={require("../../../public/assests/hero.svg")}
+           src={require("../../../public/assests/hero_Student.png")}
           width={400}
           height={400}
           alt=""
@@ -40,7 +40,7 @@ const Hero: FC<Props> = (props) => {
         />
       </div>
       <div className="1000px:w-full relative ">
-        <h2 className="dark:text-white text-[#000000c7] text-[30px] w-full 1000px:text-[70px] font-[600] font-Josefin  ">
+        <h2 className="dark:text-white text-[#000000c7] text-[30px] w-full leading-loose xl:text-6xl md:text-4xl font-[600] font-Josefin  ">
         Knowledge for everyone, everywhere.
         </h2>
         <p className="dark:text-[#edfff4] text-start text-[#000000ac] font-Josefin font-[600] text-[18px]">

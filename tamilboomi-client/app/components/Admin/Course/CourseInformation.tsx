@@ -245,7 +245,7 @@ const CourseInformation: FC<Props> = ({
                 className="max-h-full w-full object-cover"
               />
             ) : (
-              <span className="text-black dark:text-white">
+              <span className="text-black dark:text-black">
                 Drag and drop your thumbnail here or click to browse
               </span>
             )}

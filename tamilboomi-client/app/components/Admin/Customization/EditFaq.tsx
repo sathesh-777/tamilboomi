@@ -106,7 +106,7 @@ const EditFaq = (props: Props) => {
               >
                 <dt className="text-lg">
                   <button
-                    className="flex items-start dark:text-white text-black justify-between w-full text-left focus:outline-none"
+                    className="flex items-start dark:text-black text-black justify-between w-full text-left focus:outline-none"
                     onClick={() => toggleQuestion(q._id)}
                   >
                     <input
@@ -139,7 +139,7 @@ const EditFaq = (props: Props) => {
                     />
                     <span className="ml-6 flex-shrink-0">
                       <AiOutlineDelete
-                        className="dark:text-white text-black text-[18px] cursor-pointer"
+                        className="dark:text-black text-black text-[18px] cursor-pointer"
                         onClick={() => {
                           setQuestions((prevQuestions) =>
                             prevQuestions.filter((item) => item._id !== q._id)
@@ -155,7 +155,7 @@ const EditFaq = (props: Props) => {
           <br />
           <br />
           <IoMdAddCircleOutline
-            className="dark:text-white text-black text-[25px] cursor-pointer"
+            className="dark:text-black text-black text-[25px] cursor-pointer"
             onClick={newFaqHandler}
           />
         </div>
@@ -163,7 +163,7 @@ const EditFaq = (props: Props) => {
         <div
           className={`${
             styles.button
-          } !w-[100px] !min-h-[40px] !h-[40px] dark:text-white text-black bg-[#cccccc34] 
+          } !w-[100px] !min-h-[40px] !h-[40px] dark:text-black text-black bg-[#cccccc34] 
               ${
                 areQuestionsUnchanged(data.layout.faq, questions) ||
                 isAnyQuestionEmpty(questions)

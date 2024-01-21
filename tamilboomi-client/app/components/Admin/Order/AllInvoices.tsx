@@ -63,7 +63,7 @@ const AllInvoices = ({ isDashboard }: Props) => {
               return (
                 <a href={`mailto:${params.row.userEmail}`}>
                   <AiOutlineMail
-                    className="dark:text-white text-black"
+                    className="dark:text-black text-black"
                     size={20}
                   />
                 </a>
