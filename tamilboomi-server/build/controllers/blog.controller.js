@@ -28,7 +28,9 @@ exports.createBlog = (0, catchAsyncErrors_1.CatchAsyncError)(async (req, res, ne
             author: {
                 name: req.user?.name,
                 email: req.user?.email,
-                avatar: req.user?.avatar.url,
+                avatar: req.user?.avatar
+                    ? req.user?.avatar.url
+                    : "https://res.cloudinary.com/di84ng8hv/image/upload/v1705854604/avatars/nhstq8deoh0uclqxfdkm.webp",
             },
         });
         res.status(201).json({

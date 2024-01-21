@@ -27,7 +27,9 @@ export const createBlog = CatchAsyncError(
         author: {
           name: req.user?.name,
           email: req.user?.email,
-          avatar: req.user?.avatar.url,
+          avatar: req.user?.avatar
+            ? req.user?.avatar.url
+            : "https://res.cloudinary.com/di84ng8hv/image/upload/v1705854604/avatars/nhstq8deoh0uclqxfdkm.webp",
         },
       });
 
