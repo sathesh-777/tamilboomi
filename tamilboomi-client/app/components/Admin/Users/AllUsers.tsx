@@ -80,7 +80,7 @@ const AllCourses: FC<Props> = ({ isTeam }) => {
               }}
             >
               <AiOutlineDelete
-                className="dark:text-white text-black"
+                className="dark:text-black text-black"
                 size={20}
               />
             </Button>
@@ -96,7 +96,7 @@ const AllCourses: FC<Props> = ({ isTeam }) => {
         return (
           <>
             <a href={`mailto:${params.row.email}`}>
-              <AiOutlineMail className="dark:text-white text-black" size={20} />
+              <AiOutlineMail className="dark:text-black text-black" size={20} />
             </a>
           </>
         );

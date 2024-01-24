@@ -9,10 +9,10 @@ type Props = {}
 
 const page = (props: Props) => {
   return (
-    <div className='bg-[#010100]'>
+    <div className=''>
         <Heading
-         title="Elearning - Admin"
-         description="ELearning is a platform for students to learn and get help from teachers"
+         title="Tamilboomi - Admin"
+         description="Tamilboomi is a platform for students to learn and get help from teachers"
          keywords="Prograaming,MERN,Redux,Machine Learning"
         />
         <div className="flex">

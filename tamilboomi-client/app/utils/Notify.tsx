@@ -16,7 +16,7 @@ const Notify: FC<NotifyProps> = ({ text }) => {
     <>
       {isOpen && (
         <div className="w-full text-center bg-[#397CFD] py-2">
-          <Link href={"https://google.com"}>
+          <Link href={"https://chat.whatsapp.com/Dtt7HHvfBvvAzXYU8z4cWX"}>
             <span
               className={`text-md font-Poppins font-[500] text-center text-white`}
             >
