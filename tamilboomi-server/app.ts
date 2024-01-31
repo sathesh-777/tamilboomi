@@ -22,7 +22,7 @@ app.use(cookieParser());
 // cors => cross origin resource sharing
 app.use(
   cors({
-    origin: ["https://tamilboomi.vercel.app"],
+    origin: ["http://localhost:3000", "http://localhost:3001"],
     credentials: true,
   })
 );
