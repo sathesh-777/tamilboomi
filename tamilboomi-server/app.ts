@@ -22,7 +22,7 @@ app.use(cookieParser());
 // cors => cross origin resource sharing
 app.use(
   cors({
-    origin: ["https://triggerupacademy.com", "https://tamilboomi-fyarpcsyj-satheshs-projects.vercel.app"],
+    origin: ["https://triggerupacademy.com", "http:///triggerupacademy.com"],
     credentials: true,
   })
 );
