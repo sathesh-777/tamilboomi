@@ -20,17 +20,23 @@ app.use(express.json({ limit: "50mb" }));
 app.use(cookieParser());
 
 // cors => cross origin resource sharing
-const allowedOrigins = ['https://triggerupacademy.com/'];
+// const allowedOrigins = ['https://triggerupacademy.com/'];
+
+// app.use(cors({
+//     origin: (origin, callback) => {
+//         if (!origin || allowedOrigins.includes(origin)) {
+//             callback(null, true);
+//         } else {
+//             callback(new Error('Not allowed by CORS'));
+//         }
+//     },
+//     credentials: true,
+// }));
+
 
 app.use(cors({
-    origin: (origin, callback) => {
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    credentials: true,
+  origin: process.env.ORIGIN || "https://triggerupacademy.com",
+  credentials: true, // if your front-end needs to send cookies
 }));
 
 // api requests limit
@@ -41,6 +47,7 @@ const limiter = rateLimit({
   legacyHeaders: false,
 });
 
+app.use(limiter);
 // routes
 app.use(
   "/api/v1",
@@ -69,5 +76,5 @@ app.all("*", (req: Request, res: Response, next: NextFunction) => {
 });
 
 // middleware calls
-app.use(limiter);
+
 app.use(ErrorMiddleware);
