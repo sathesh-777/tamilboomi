@@ -96,15 +96,15 @@ export const authApi = apiSlice.injectEndpoints({
         method: "GET",
         credentials: "include" as const,
       }),
-      // async onQueryStarted(arg, { queryFulfilled, dispatch }) {
-      //   try {
-      //     dispatch(
-      //       userLoggedOut()
-      //     );
-      //   } catch (error: any) {
-      //     console.log(error);
-      //   }
-      // },
+      async onQueryStarted(arg, { queryFulfilled, dispatch }) {
+        try {
+          dispatch(
+            userLoggedOut()
+          );
+        } catch (error: any) {
+          console.log(error);
+        }
+      },
     }),
   }),
 });
