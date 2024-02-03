@@ -48,7 +48,7 @@ const NavItems: React.FC<Props> = ({ activeItem, isMobile }) => {
       {isMobile && (
         <div className="800px:hidden mt-5">
              <div className="w-full text-center py-6">
-             <Link href={"/"}>
+                <Link href={"/"}>
                   <Image
                     src={require("../../public/assests/Logo.png")}
                     alt=""
