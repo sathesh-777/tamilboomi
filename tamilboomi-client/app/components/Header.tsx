@@ -90,12 +90,12 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
             : "w-full !border-b !border-[#00000022] h-[80px] z-[80]"
         }`}
       >
-        <div className="1000px:m-auto py-2 h-full 1000px:px-32">
+        <div className="w-100 lg:px-32">
           <div className="w-full h-[80px] flex items-center justify-between p-3">
             <div>
             <Link href={"/"}>
                   <Image
-                    src={require("../../public/assests/Logo.png")}
+                    src={require("../../public/assests/logo1.png")}
                     alt=""
                     width={200}
                     height={300}
