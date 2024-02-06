@@ -97,9 +97,9 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
                   <Image
                     src={require("../../public/assests/Logo.png")}
                     alt=""
-                    width={200}
-                    height={300}
-                    className="w-100 h-auto rounded-full  cursor-pointer bg-white px-3"
+                    width={180}
+                    height={200}
+                    className="w-100 h-auto rounded-full  cursor-pointer  px-3"
                     />
                 </Link>
             </div>

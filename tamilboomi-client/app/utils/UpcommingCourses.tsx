@@ -35,8 +35,8 @@ const Upcomming: FC<Props> = (props) => {
                   className="w-full h-auto"
                 />
               </div>
-              <div className="1000px:w-full relative p-5">
-                <h2 className="text-white text-md w-full xl:text-6xl md:text-4xl font-bold">
+              <div className="1000px:w-full relative p-5 text-center md:text-left">
+                <h2 className="text-white text-md w-full xl:text-6xl md:text-4xl font-bold text-left">
                 AWS - Master Course
                 </h2>
                 <p className="text-[#edfff4] text-start font-Josefin 1000px:text-2xl mt-2">
@@ -52,7 +52,7 @@ const Upcomming: FC<Props> = (props) => {
                 </ul>
 
               <Link  href={`https://wa.me/+919619663272`}>
-              <button className="text-[#edfff4] text-start mx-auto border-[#edfff4] border-2 rounded-md font-Josefin text-[18px] mt-4 px-4 py-2">
+              <button className="text-[#edfff4] text-start mx-auto  border-[#edfff4] border-2 rounded-md font-Josefin text-[18px] mt-4 px-4 py-2">
   Contact Us
 </button>
               </Link>
