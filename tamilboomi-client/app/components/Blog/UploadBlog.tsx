@@ -32,12 +32,12 @@ const UploadBlog = () => {
 
   return (
     <div>
-      <div className="w-full min-h-screen h-min   flex flex-col items-center py-10">
-        <div className="w-[90%] xl:w-[50%] m-auto text-center text-black">
+      <div className="w-full min-h-screen h-min bg-[#010100] flex flex-col items-center py-10">
+        <div className="w-[90%] xl:w-[50%] m-auto text-center text-white">
           <br />
           <br />
           <br />
-          <label htmlFor="" className="text-black font-sans text-xl py-2">
+          <label htmlFor="" className="text-white font-sans text-xl py-2">
             Upload one Thumbnail for your blog
           </label>
           <ImageUploadDropZone imageUrl={imageUrl} setImageUrl={setImageUrl} />
@@ -48,7 +48,7 @@ const UploadBlog = () => {
             title={title}
             setTitle={setTitle}
           />
-          <div className="ql-snow mt-16 text-black">
+          <div className="ql-snow mt-16 text-white">
             <strong className="block text-left">Blog Preview:</strong>
             <div
               className="ql-editor"
@@ -57,7 +57,7 @@ const UploadBlog = () => {
           </div>
           <br />
           <button
-            className="bg-[#3b81e1] text-white w-[80px] h-[35px] rounded"
+            className="bg-[#fff] text-black w-[80px] h-[35px] rounded"
             onClick={(e) => handleSubmit(e)}
           >
             Create

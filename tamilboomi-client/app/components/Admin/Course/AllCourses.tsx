@@ -39,7 +39,7 @@ const AllCourses = (props: Props) => {
         return (
           <>
             <Link href={`/admin/edit-course/${params.row.id}`}>
-              <FiEdit2 className="dark:text-black text-black" size={20} />
+              <FiEdit2 className="dark:text-white text-black" size={20} />
             </Link>
           </>
         );
@@ -59,7 +59,7 @@ const AllCourses = (props: Props) => {
               }}
             >
               <AiOutlineDelete
-                className="dark:text-black text-black"
+                className="dark:text-white text-black"
                 size={20}
               />
             </Button>

@@ -18,7 +18,7 @@ const Page = ({ params }: { params: any }) => {
     <div>
       <Heading
         title={`Blog Details`}
-        description="Tamilboomi is a learning management system for helping programmers."
+        description="Elearning is a learning management system for helping programmers."
         keywords="programming,mern"
       />
       <Header
