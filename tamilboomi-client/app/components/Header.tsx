@@ -95,7 +95,7 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
             <div>
             <Link href={"/"}>
                   <Image
-                    src={require("../../public/assests/Logo.png")}
+                    src={require("../../public/assests/logo1.png")}
                     alt=""
                     width={200}
                     height={300}
@@ -163,7 +163,7 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
                   onClick={() => setOpen(true)}
                 />
               )}
-              <p className="text-black block py-5 text-[18px] px-6 font-Poppins font-[400] cursor-pointer"
+              <p className="text-black block py-5 text-[18px] px-6 font-Poppins font-[400]"
                 onClick={() => { setOpen(true); setOpenSidebar(false); }}>Login</p>
               <br />
               <br />
