@@ -13,11 +13,11 @@ export const navItemsData = [
   },
   {
     name: "Blogs",
-    url: "/blog",
+    url: "#",
   },
   {
     name: "Contact Us",
-    url: "/contact",
+    url: "#",
   },
 ];
 

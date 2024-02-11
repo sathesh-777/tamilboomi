@@ -47,7 +47,7 @@ const Blog = (props: Props) => {
             >
               <div className="relative w-full h-48">
                 <Image
-                  src={post.thumbnailUrl.url}
+                  src={post.thumbnailUrl?.url}
                   alt={post.title}
                   layout="fill"
                   objectFit="cover"
@@ -63,19 +63,13 @@ const Blog = (props: Props) => {
             </Link>
           ))}
       </div>
-      <Link
-        href={`/blog`}
-      >
-        <div className={`flex items-center justify-center mt-20`}>
-          <span
-            className={`h-[35px] rounded-full bg-gray-400 m-3 px-3 max-w-300px flex items-center justify-center font-Poppins cursor-pointer`}
-          >
-            View All
-          </span>
-        </div>
-
-      </Link>
-
+      <div className={`flex items-center justify-center mt-20`}>
+        <span
+          className={`h-[35px] rounded-full bg-gray-400 m-3 px-3 max-w-300px flex items-center justify-center font-Poppins cursor-pointer`}
+        >
+          View All
+        </span>
+      </div>
     </div>
   );
 };

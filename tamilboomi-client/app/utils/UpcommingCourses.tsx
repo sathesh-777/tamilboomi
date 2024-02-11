@@ -25,10 +25,10 @@ const Upcomming: FC<Props> = (props) => {
 
                   </div>
                 </div>
-            <div className="1000px:flex justify-center items-center rounded-xl overflow-hidden bg-[#397CFD]">
+            <div className="1000px:flex justify-center items-center rounded-xl bg-[#397CFD]">
               <div className="flex justify-center items-center w-full">
                 <Image
-                  src={require("./../../public/assests/amazon_cloud.png")}
+                  src={require("./../../public/assests/business-img.png")}
                   width={400}
                   height={400}
                   alt=""
@@ -36,26 +36,26 @@ const Upcomming: FC<Props> = (props) => {
                 />
               </div>
               <div className="1000px:w-full relative p-5">
-                <h2 className="text-white text-md w-full xl:text-6xl md:text-4xl font-bold">
-                AWS - Master Course
+                <h2 className="text-white text-md w-full 1000px:text-6xl font-bold">
+                  Data Engineering
                 </h2>
-                <p className="text-[#edfff4] text-start font-Josefin 1000px:text-2xl mt-2">
-                From basic to solution architect
+                <p className="text-[#edfff4] text-start font-Josefin 1000px:text-2xl">
+                  From Design To Implementation
                 </p>
           
                 {/* List of Points */}
                 <ul className="text-[#edfff4] text-start list-disc ml-4 font-Josefin 1000px:text-2xl mt-4">
+                  <li>100% Placement Support</li>
                   <li>Industry Led Curriculum</li>
                   <li>Hands-on Training</li>
-                  <li>Real time Projects</li>
-                  <li>job preparation </li>
+                  <li>20+ Projects</li>
+                  <li>IIT-M Pravartak Certification</li>
+                  <li>Official AWS Certification</li>
                 </ul>
 
-              <Link  href={`https://wa.me/+919619663272`}>
-              <button className="text-[#edfff4] text-start mx-auto border-[#edfff4] border-2 rounded-md font-Josefin text-[18px] mt-4 px-4 py-2">
-  Contact Us
+                <button className="text-[#edfff4] text-start border-[#edfff4] border-2 rounded-md font-Josefin text-[18px] mt-4 px-4 py-2">
+  View
 </button>
-              </Link>
 
               </div>
             </div>

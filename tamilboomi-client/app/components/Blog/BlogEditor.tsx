@@ -28,8 +28,8 @@ const BlogEditor = ({
   ];
 
   return (
-    <div className="text-black">
-      <label htmlFor="" className="text-black text-xl block text-left">
+    <div className="text-white">
+      <label htmlFor="" className="text-white text-xl block text-left">
         Blog Title
       </label>
       <input
@@ -37,13 +37,13 @@ const BlogEditor = ({
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Write your blog title..."
-        className="border border-[#ffffff8d] bg-transparent outline-none my-3 p-2 text-black w-full"
+        className="border border-[#ffffff8d] bg-transparent outline-none my-3 p-2 text-white w-full"
       />
       <p className="font-sans text-xl text-[#ffffffce] pb-2 block text-left">
         Now here we go! start to writing your blog!
       </p>
       <ReactQuill
-        className="h-min text-black"
+        className="h-min text-white"
         theme="snow"
         value={value}
         onChange={setValue}

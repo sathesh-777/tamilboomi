@@ -150,7 +150,7 @@ const CourseContent: FC<Props> = ({
                           item.videoSection === "Untitled Section"
                             ? "w-[170px]"
                             : "w-min"
-                        } font-Poppins cursor-pointer dark:text-black text-black bg-transparent outline-none`}
+                        } font-Poppins cursor-pointer dark:text-white text-black bg-transparent outline-none`}
                         value={item.videoSection}
                         onChange={(e) => {
                           const updatedData = [...courseContentData];
@@ -158,7 +158,7 @@ const CourseContent: FC<Props> = ({
                           setCourseContentData(updatedData);
                         }}
                       />
-                      <BsPencil className="cursor-pointer dark:text-black text-black" />
+                      <BsPencil className="cursor-pointer dark:text-white text-black" />
                     </div>
                     <br />
                   </>
@@ -168,7 +168,7 @@ const CourseContent: FC<Props> = ({
                   {isCollapsed[index] ? (
                     <>
                       {item.title ? (
-                        <p className="font-Poppins dark:text-black text-black">
+                        <p className="font-Poppins dark:text-white text-black">
                           {index + 1}. {item.title}
                         </p>
                       ) : (
@@ -182,7 +182,7 @@ const CourseContent: FC<Props> = ({
                   {/* // arrow button for collasped video content */}
                   <div className="flex items-center">
                     <AiOutlineDelete
-                      className={`dark:text-black text-[20px] mr-2 text-black ${
+                      className={`dark:text-white text-[20px] mr-2 text-black ${
                         index > 0 ? "cursor-pointer" : "cursor-no-drop"
                       }`}
                       onClick={() => {
@@ -195,7 +195,7 @@ const CourseContent: FC<Props> = ({
                     />
                     <MdOutlineKeyboardArrowDown
                       fontSize="large"
-                      className="dark:text-black text-black"
+                      className="dark:text-white text-black"
                       style={{
                         transform: isCollapsed[index]
                           ? "rotate(180deg)"
@@ -278,7 +278,7 @@ const CourseContent: FC<Props> = ({
                               linkIndex === 0
                                 ? "cursor-no-drop"
                                 : "cursor-pointer"
-                            } text-black dark:text-black text-[20px]`}
+                            } text-black dark:text-white text-[20px]`}
                             onClick={() =>
                               linkIndex === 0
                                 ? null
@@ -316,7 +316,7 @@ const CourseContent: FC<Props> = ({
                     {/* add link button */}
                     <div className="inline-block mb-4">
                       <p
-                        className="flex items-center text-[18px] dark:text-black text-black cursor-pointer"
+                        className="flex items-center text-[18px] dark:text-white text-black cursor-pointer"
                         onClick={() => handleAddLink(index)}
                       >
                         <BsLink45Deg className="mr-2" /> Add Link
@@ -329,7 +329,7 @@ const CourseContent: FC<Props> = ({
                 {index === courseContentData.length - 1 && (
                   <div>
                     <p
-                      className="flex items-center text-[18px] dark:text-black text-black cursor-pointer"
+                      className="flex items-center text-[18px] dark:text-white text-black cursor-pointer"
                       onClick={(e: any) => newContentHandler(item)}
                     >
                       <AiOutlinePlusCircle className="mr-2" /> Add New Content
@@ -342,7 +342,7 @@ const CourseContent: FC<Props> = ({
         })}
         <br />
         <div
-          className="flex items-center text-[20px] dark:text-black text-black cursor-pointer"
+          className="flex items-center text-[20px] dark:text-white text-black cursor-pointer"
           onClick={() => addNewSection()}
         >
           <AiOutlinePlusCircle className="mr-2" /> Add new Section

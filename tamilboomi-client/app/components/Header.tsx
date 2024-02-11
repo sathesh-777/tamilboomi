@@ -60,7 +60,7 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
 
   if (typeof window !== "undefined") {
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 120) {
+      if (window.scrollY > 85) {
         setActive(true);
       } else {
         setActive(false);
@@ -167,8 +167,8 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
                 onClick={() => { setOpen(true); setOpenSidebar(false); }}>Login</p>
               <br />
               <br />
-              <p className="text-[16px] px-2 pl-5 text-black dark:text-black">
-                Copyright © 2023 Tamilboomi
+              <p className="text-[16px] px-2 pl-5 text-black dark:text-white">
+                Copyright © 2023 ELearning
               </p>
             </div>
           </div>

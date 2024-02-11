@@ -16,7 +16,7 @@ const page = (props: Props) => {
           description="Tamilboomi is a platform for students to learn and get help from teachers"
           keywords="Programming,MERN,Redux,Machine Learning"
         />
-        <div className="flex min-h-screen bg-[#f5f5f1]">
+        <div className="flex min-h-screen bg-[#010100]">
           <div className="1500px:w-[16%] w-1/5">
             <AdminSidebar />
           </div>

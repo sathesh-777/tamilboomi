@@ -63,14 +63,14 @@ const DashboardHeader: FC<Props> = ({ open, setOpen }) => {
         className="relative cursor-pointer m-2"
         onClick={() => setOpen(!open)}
       >
-        <IoMdNotificationsOutline className="text-2xl cursor-pointer dark:text-black text-black" />
-        <span className="absolute -top-2 -right-2 bg-[#3ccba0] rounded-full w-[20px] h-[20px] text-[12px] flex items-center justify-center text-black">
+        <IoMdNotificationsOutline className="text-2xl cursor-pointer dark:text-white text-black" />
+        <span className="absolute -top-2 -right-2 bg-[#3ccba0] rounded-full w-[20px] h-[20px] text-[12px] flex items-center justify-center text-white">
           {notifications && notifications.length}
         </span>
       </div>
       {open && (
         <div className="w-[350px] h-[60vh] overflow-y-scroll py-3 px-2 border border-[#ffffff0c] dark:bg-[#111C43] bg-white shadow-xl absolute top-16 z-[1000000000] rounded">
-          <h5 className="text-center text-[20px] font-Poppins text-black dark:text-black p-3">
+          <h5 className="text-center text-[20px] font-Poppins text-black dark:text-white p-3">
             Notifications
           </h5>
           {notifications &&
@@ -80,18 +80,18 @@ const DashboardHeader: FC<Props> = ({ open, setOpen }) => {
                 key={index}
               >
                 <div className="w-full flex items-center justify-between p-2">
-                  <p className="text-black dark:text-black">{item.title}</p>
+                  <p className="text-black dark:text-white">{item.title}</p>
                   <p
-                    className="text-black dark:text-black cursor-pointer"
+                    className="text-black dark:text-white cursor-pointer"
                     onClick={() => handleNotificationStatusChange(item._id)}
                   >
                     Mark as read
                   </p>
                 </div>
-                <p className="px-2 text-black dark:text-black">
+                <p className="px-2 text-black dark:text-white">
                   {item.message}
                 </p>
-                <p className="p-2 text-black dark:text-black text-[14px]">
+                <p className="p-2 text-black dark:text-white text-[14px]">
                   {format(item.createdAt)}
                 </p>
               </div>
