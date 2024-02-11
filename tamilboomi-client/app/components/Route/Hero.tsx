@@ -39,8 +39,8 @@ const Hero: FC<Props> = (props) => {
           className="w-full h-auto"
         />
       </div>
-      <div className="1000px:w-full relative ">
-        <h2 className="dark:text-white text-[#000000c7] text-[30px] w-full 1000px:text-[70px] font-[600] font-Josefin  ">
+      <div className="1000px:w-full relative px-4">
+        <h2 className="dark:text-white text-[#000000c7] text-[20px] w-full leading-loose xl:text-6xl md:text-4xl font-[600] font-Josefin  ">
         Knowledge for everyone, everywhere.
         </h2>
         <p className="dark:text-[#edfff4] text-start text-[#000000ac] font-Josefin font-[600] text-[18px]">
@@ -63,7 +63,7 @@ const Hero: FC<Props> = (props) => {
         </div>
         <br />
         <br />
-        <div className="1500px:w-[55%] 1100px:w-[78%] w-[90%] flex items-center">
+        <div className="1500px:w-[55%] 1100px:w-[78%] w-[90%] flex items-center mx-auto md:mx-0">
           <Image
             src={require("../../../public/assests/client-1.jpg")}
             alt=""
@@ -79,7 +79,7 @@ const Hero: FC<Props> = (props) => {
             alt=""
             className="rounded-full ml-[-20px]"
           />
-          <p className="font-Josefin text-[#000000b3] 1000px:pl-3 1000px:text-[18px] 1000p:font-[600]">
+          <p className="font-Josefin text-[#000000b3] 1000px:pl-3 1000px:text-[18px] 1000p:font-[600] text-[15px">
             500K+ People already trusted us.{" "}
             <Link
               href="/courses"

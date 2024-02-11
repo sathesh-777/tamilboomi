@@ -6,6 +6,7 @@ import React, { FC, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import Loader from "../components/Loader/Loader";
 import { useRouter } from "next/navigation";
+import Image1  from '../../public/assests/amazon_cloud.png';
 
 type Props = {};
 
@@ -25,37 +26,37 @@ const Upcomming: FC<Props> = (props) => {
 
                   </div>
                 </div>
-            <div className="1000px:flex justify-center items-center rounded-xl bg-[#397CFD]">
+            <div className="1000px:flex justify-center items-center rounded-xl overflow-hidden bg-[#397CFD]">
               <div className="flex justify-center items-center w-full">
                 <Image
-                  src={require("./../../public/assests/business-img.png")}
+                  src={Image1}
                   width={400}
                   height={400}
                   alt=""
                   className="w-full h-auto"
                 />
               </div>
-              <div className="1000px:w-full relative p-5">
-                <h2 className="text-white text-md w-full 1000px:text-6xl font-bold">
-                  Data Engineering
+              <div className="1000px:w-full relative p-5 text-center md:text-left">
+                <h2 className="text-white text-md w-full xl:text-6xl md:text-4xl font-bold text-left">
+                AWS - Master Course
                 </h2>
-                <p className="text-[#edfff4] text-start font-Josefin 1000px:text-2xl">
-                  From Design To Implementation
+                <p className="text-[#edfff4] text-start font-Josefin 1000px:text-2xl mt-2">
+                From basic to solution architect
                 </p>
           
                 {/* List of Points */}
                 <ul className="text-[#edfff4] text-start list-disc ml-4 font-Josefin 1000px:text-2xl mt-4">
-                  <li>100% Placement Support</li>
                   <li>Industry Led Curriculum</li>
                   <li>Hands-on Training</li>
-                  <li>20+ Projects</li>
-                  <li>IIT-M Pravartak Certification</li>
-                  <li>Official AWS Certification</li>
+                  <li>Real time Projects</li>
+                  <li>job preparation </li>
                 </ul>
 
-                <button className="text-[#edfff4] text-start border-[#edfff4] border-2 rounded-md font-Josefin text-[18px] mt-4 px-4 py-2">
-  View
-</button>
+              <Link  href={'https://wa.me/+919619663272'}>
+              <button className="text-[#edfff4] text-start mx-auto  border-[#edfff4] border-2 rounded-md font-Josefin text-[18px] mt-4 px-4 py-2">
+                Contact Us
+              </button>
+              </Link>
 
               </div>
             </div>

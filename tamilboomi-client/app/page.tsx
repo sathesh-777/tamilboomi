@@ -8,6 +8,7 @@ import Blog from "./components/Route/Blog";
 import Footer from "./components/Footer";
 import Notify from "./utils/Notify";
 import Upcomming from "./utils/UpcommingCourses";
+import Contact from "./contact/contact";
 
 interface Props {}
 
@@ -36,11 +37,10 @@ const Page: FC<Props> = (props) => {
       <Upcomming />
       <Courses />
       <Blog />
+      <Contact/>
       <Footer />
     </div>
   );
 };
 
 export default Page;
-
-
