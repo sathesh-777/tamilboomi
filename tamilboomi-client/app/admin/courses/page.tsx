@@ -15,7 +15,7 @@ const page = (props: Props) => {
         <Heading
           title="Tamilboomi - Admin"
           description="Tamilboomi is a platform for students to learn and get help from teachers"
-          keywords="Programming,MERN,Redux,Machine Learning"
+          keywords="Programming ,MERN, Redux , Machine Learning"
         />
         <div className="flex h-screen">
           <div className="1500px:w-[16%] w-1/5">
