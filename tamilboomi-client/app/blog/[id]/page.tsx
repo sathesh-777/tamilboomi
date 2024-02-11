@@ -34,7 +34,7 @@ const Page = ({ params }: { params: any }) => {
         <div className="w-full">
           <div className="w-[80%] m-auto py-10">
             <Image
-              src={data.blog.thumbnailUrl.url}
+              src={data.blog.thumbnailUrl?.url}
               alt=""
               className="w-full"
               width={800}
