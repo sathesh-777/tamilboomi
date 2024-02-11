@@ -13,7 +13,7 @@ const Page = ({ params }: { params: any }) => {
   const [activeItem, setActiveItem] = useState(2);
   const [route, setRoute] = useState("Login");
   const { data, isLoading } = useGetSingleBlogQuery({ id: params.id });
-
+  console.log(data.blog);
   return (
     <div>
       <Heading
@@ -63,5 +63,8 @@ const Page = ({ params }: { params: any }) => {
     </div>
   );
 };
+
+
+
 
 export default Page;
