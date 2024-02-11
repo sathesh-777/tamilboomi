@@ -9,6 +9,8 @@ type Props = {};
 
 const Blog = (props: Props) => {
   const { data } = useGetAllBlogsQuery({});
+  console.log(data);
+
 
   return (
     <div className="w-[90%] 800px:w-[85%] m-auto my-4">
@@ -47,7 +49,7 @@ const Blog = (props: Props) => {
             >
               <div className="relative w-full h-48">
                 <Image
-                  src={post.thumbnailUrl.url}
+                  src={post.thumbnailUrl?.url}
                   alt={post.title}
                   layout="fill"
                   objectFit="cover"
