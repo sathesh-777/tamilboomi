@@ -47,7 +47,7 @@ const Blog = (props: Props) => {
             >
               <div className="relative w-full h-48">
                 <Image
-                  src={post.thumbnailUrl.url}
+                  src={post.thumbnailUrl?.url}
                   alt={post.title}
                   layout="fill"
                   objectFit="cover"
