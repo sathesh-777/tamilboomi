@@ -110,7 +110,7 @@ const Login: FC<Props> = ({ setRoute, setOpen,refetch }) => {
           <input type="submit" value="Login" className={`${styles.button} !text-white`} />
         </div>
         <br />
-        {/*<h5 className="text-center pt-4 font-Poppins text-[14px] text-black">
+        <h5 className="text-center pt-4 font-Poppins text-[14px] text-black">
           Or join with
         </h5>
          <div className="flex items-center justify-center my-3">
@@ -118,7 +118,7 @@ const Login: FC<Props> = ({ setRoute, setOpen,refetch }) => {
           onClick={() => signIn("google")}
           />
           <AiFillGithub size={30} className="cursor-pointer ml-2" onClick={() => signIn("github")} />
-        </div> */}
+        </div>
         <h5 className="text-center pt-4 font-Poppins text-[14px]">
           Not have any account?{" "}
           <span
