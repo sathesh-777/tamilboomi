@@ -1,5 +1,7 @@
 import React from "react";
+import Image from "next/image";
 import { styles } from "../styles/style";
+import banner from '../../public/assests/site_feature.png'
 
 const About = () => {
   return (
@@ -8,6 +10,14 @@ const About = () => {
       <h1 className={`${styles.title} 800px:!text-[45px] font-bold`}>
           About Tamilboomi Technologies
       </h1>
+      <div className="flex flex-col justify-center items-center py-2">
+        <Image
+          src={banner}
+          alt="Description"
+          className="px-4"
+        />
+        <p className="text-black pt-3">Tamilboomi Technologies</p>
+    </div>
       <br />
       <div className="w-[95%] 800px:w-[60%] m-auto text-black px-5">
         <p className="text-[18px] font-Poppins">
