@@ -8,16 +8,16 @@ export const navItemsData = [
     url: "/",
   },
   {
-    name: "About",
-    url: "/about",
-  },
-  {
     name: "Courses",
     url: "/courses",
   },
   {
     name: "Blogs",
     url: "/blog",
+  },
+  {
+    name: "About",
+    url: "/about",
   },
   {
     name: "Contact Us",
