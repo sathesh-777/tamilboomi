@@ -16,7 +16,7 @@ const CourseCard: FC<Props> = ({ item, isProfile }) => {
     >
       <div className="w-full min-h-[35vh] hover:shadow-2xl bg-opacity-20 backdrop-blur border border-[#00000015] rounded-lg p-3 shadow-sm">
         <Image
-          src={item.thumbnail.url}
+          src={item.thumbnail?.url}
           width={500}
           height={300}
           objectFit="contain"
