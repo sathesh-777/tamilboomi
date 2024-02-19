@@ -32,7 +32,7 @@ const UploadBlog = () => {
 
   return (
     <div>
-      <div className="w-full min-h-screen h-min bg-[#010100] flex flex-col items-center py-10">
+      <div className="w-full min-h-screen h-min bg-[#010100] flex flex-col items-center py-10 bg-white">
         <div className="w-[90%] xl:w-[50%] m-auto text-center text-white">
           <br />
           <br />

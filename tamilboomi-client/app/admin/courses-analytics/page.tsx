@@ -9,7 +9,7 @@ type Props = {}
 
 const page = (props: Props) => {
   return (
-    <div className='bg-[#010100]'>
+    <div className='text-white'>
         <Heading
          title="Elearning - Admin"
          description="ELearning is a platform for students to learn and get help from teachers"

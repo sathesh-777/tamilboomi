@@ -11,7 +11,7 @@ const page = ({params}:any) => {
     const id = params?.id;
 
   return (
-    <div className='bg-[#010100]'>
+    <div className='text-black'>
         <Heading
          title="Elearning - Admin"
          description="ELearning is a platform for students to learn and get help from teachers"

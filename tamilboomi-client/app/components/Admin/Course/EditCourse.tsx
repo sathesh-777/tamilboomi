@@ -142,7 +142,7 @@ const EditCourse:FC<Props> = ({id}) => {
   };
 
   return (
-    <div className="w-full flex min-h-screen">
+    <div className="w-full flex min-h-screen bg-white">
       <div className="w-[80%]">
         {active === 0 && (
           <CourseInformation
