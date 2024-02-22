@@ -90,8 +90,8 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
             : "w-full !border-b !border-[#00000022] h-[80px] z-[80]"
         }`}
       >
-        <div className="w-100 lg:px-32">
-          <div className="w-full h-[80px] flex items-center justify-between p-3">
+        <div className="w-100 lg:px-25 xl:p-22">
+          <div className="w-full h-[80px] lg:ps-20 flex items-center justify-between p-3">
             <div>
             <Link href={"/"}>
                   <Image
@@ -107,13 +107,15 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
               <NavItems activeItem={activeItem} isMobile={false} />
               
               {/* only for mobile */}
-              <div className="800px:hidden">
+              <div className="898px:hidden">
                 <HiOutlineMenuAlt3
                   size={25}
                   className="cursor-pointer text-black"
                   onClick={() => setOpenSidebar(true)}
                 />
               </div>
+            </div>
+            <div className="flex items-center hidden 898px:flex">
               {userData ? (
                 <Link href={"/profile"} className="select-none ml-2">
                   <Image
@@ -126,11 +128,11 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
                   />
                 </Link>
               ) : (
-                <HiOutlineUserCircle
-                  size={25}
-                  className="hidden 800px:block cursor-pointer text-black"
-                  onClick={() => setOpen(true)}
-                />
+                <div className="px-3 text-white bg-blue-700 rounded-lg pb-2 pt-1 cursor-pointer lg:mr-20"
+                onClick={() => setOpen(true)}
+                >
+                Signup
+                </div>
               )}
             </div>
           </div>

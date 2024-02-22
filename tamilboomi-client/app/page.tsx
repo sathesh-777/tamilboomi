@@ -32,7 +32,7 @@ const Page: FC<Props> = (props) => {
         setRoute={setRoute}
         route={route}
       />
-      <Notify text="Welcome to Tamilboomi technologies, to get latest updates and couching  " />
+      {/* <Notify text="Welcome to Tamilboomi technologies, to get latest updates and couching  " /> */}
       <Hero />
       <Upcomming />
       <Courses />
