@@ -17,11 +17,12 @@ export const ordersApi = apiSlice.injectEndpoints({
       }),
     }),
     createPaymentIntent: builder.mutation({
-      query: (amount) => ({
+      query: ({amount , currency}) => ({
         url: "payment",
         method: "POST",
         body: {
           amount,
+          currency,
         },
         credentials: "include" as const,
       }),

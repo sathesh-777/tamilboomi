@@ -34,7 +34,8 @@ const CourseDetailsPage = ({ id }: Props) => {
     }
     if (data && userData?.user) {
       const amount = Math.round(data.course.price * 100);
-      createPaymentIntent(amount);
+      const currency = "INR";
+      createPaymentIntent({amount, currency});
     }
   }, [config, data, userData]);
 
@@ -51,7 +52,7 @@ const CourseDetailsPage = ({ id }: Props) => {
       ) : (
         <div>
           <Heading
-            title={data.course.name + " - Tamilboomi"}
+            title={data?.course?.name + " - Tamilboomi"}
             description={
               "Tamilboomi is a programming community which is developed by shahriar sajeeb for helping programmers"
             }
