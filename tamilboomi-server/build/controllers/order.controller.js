@@ -101,17 +101,16 @@ exports.sendStripePublishableKey = (0, catchAsyncErrors_1.CatchAsyncError)(async
     });
 });
 // new payment
+// Enhanced newPayment function to dynamically set amount and currency
 exports.newPayment = (0, catchAsyncErrors_1.CatchAsyncError)(async (req, res, next) => {
     try {
+        const { amount, currency } = req.body; // Extract amount and currency from the request body
+        // Validate amount and currency here (important for security and correctness)
         const myPayment = await stripe.paymentIntents.create({
-            amount: 1,
-            currency: "INR",
-            metadata: {
-                company: "E-Learning",
-            },
-            automatic_payment_methods: {
-                enabled: true,
-            },
+            amount,
+            currency,
+            metadata: { company: "E-Learning" },
+            automatic_payment_methods: { enabled: true },
         });
         res.status(201).json({
             success: true,
