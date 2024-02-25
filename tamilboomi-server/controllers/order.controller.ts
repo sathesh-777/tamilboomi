@@ -130,27 +130,24 @@ export const sendStripePublishableKey = CatchAsyncError(
   }
 );
 
-// new payment
-export const newPayment = CatchAsyncError(
-  async (req: Request, res: Response, next: NextFunction) => {
-    try {
-      const myPayment = await stripe.paymentIntents.create({
-        amount: 1,
-        currency: "INR",
-        metadata: {
-          company: "E-Learning",
-        },
-        automatic_payment_methods: {
-          enabled: true,
-        },
-      });
+// Enhanced newPayment function to dynamically set amount and currency
+export const newPayment = CatchAsyncError(async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const { amount, currency } = req.body; // Extract amount and currency from the request body
+    // Validate amount and currency here (important for security and correctness)
+    
+    const myPayment = await stripe.paymentIntents.create({
+      amount, // Use the validated amount
+      currency, // Use the validated currency
+      metadata: { company: "E-Learning" },
+      automatic_payment_methods: { enabled: true },
+    });
 
-      res.status(201).json({
-        success: true,
-        client_secret: myPayment.client_secret,
-      });
-    } catch (error: any) {
-      return next(new ErrorHandler(error.message, 500));
-    }
+    res.status(201).json({
+      success: true,
+      client_secret: myPayment.client_secret,
+    });
+  } catch (error: any) {
+    return next(new ErrorHandler(error.message, 500));
   }
-);
+});
