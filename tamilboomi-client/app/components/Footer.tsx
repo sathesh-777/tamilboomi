@@ -34,12 +34,12 @@ const Footer = (props: Props) => {
             <h3 className="text-[20px] font-[600] text-black">Quick Links</h3>
             <ul className="space-y-4">
               <li>
-                <Link href="#" className="text-base text-black  ">
+                <Link href="/courses" className="text-base text-black  ">
                   Courses
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-base text-black  ">
+                <Link href="/profile" className="text-base text-black  ">
                   My Account
                 </Link>
               </li>
@@ -54,18 +54,18 @@ const Footer = (props: Props) => {
             <h3 className="text-[20px] font-[600] text-black">Social Links</h3>
             <ul className="space-y-4">
               <li>
-                <Link href="#" className="text-base text-black  ">
+                <Link href="https://www.youtube.com/@Tamilboomi" className="text-base text-black  ">
                   Youtube
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-base text-black  ">
+                <Link href="https://www.instagram.com/tamilboomitechnologies" className="text-base text-black  ">
                   Instagram
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-base text-black  ">
-                  github
+                <Link href="https://www.linkedin.com/in/tamilboomi-tech-118783277?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="text-base text-black  ">
+                  Linkedin
                 </Link>
               </li>
             </ul>
@@ -74,20 +74,20 @@ const Footer = (props: Props) => {
             <h3 className="text-[20px] font-[600] text-black pb-3">
               Contact Info
             </h3>
-            <p className="text-base text-black   pb-2">Call Us: 1234567890</p>
+            <p className="text-base text-black   pb-2">Call Us: +91 9619663272</p>
 
             <p className="text-base text-black   pb-2">
-              Address: xxx xxxx xxx chennai
+              Address: Chennai
             </p>
 
             <p className="text-base text-black    pb-2">
-              Mail Us: text@email.com
+              Mail Us: info@tamilboomi.com
             </p>
           </div>
         </div>
         <br />
         <p className="text-center text-black">
-          Copyright © 2023 Tamilboomi | All Rights Reserved
+          Copyright © 2024 Tamilboomi | All Rights Reserved
         </p>
       </div>
       <br />
