@@ -40,7 +40,7 @@ export default function RootLayout({
           <SessionProvider>
             <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
               <Custom>
-                <div>{children}</div>
+                {children}
               </Custom>
               <Toaster position="top-center" reverseOrder={false} />
             </ThemeProvider>

@@ -18,7 +18,7 @@ const Page: FC<Props> = (props) => {
   const [route, setRoute] = useState("Login");
 
   return (
-    <div>
+    <>
       <Heading
         title="Tamilboomi"
         description="TamilBoomi is a platform for students to learn and get help from teachers"
@@ -39,7 +39,7 @@ const Page: FC<Props> = (props) => {
       <Blog />
       <Contact/>
       <Footer />
-    </div>
+    </>
   );
 };
 

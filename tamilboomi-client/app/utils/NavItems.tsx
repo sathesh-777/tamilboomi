@@ -1,6 +1,9 @@
 import Link from "next/link";
-import React from "react";
+import React, {useState } from "react";
+
 import Image from "next/image";
+import useWindowPosition from "../hooks/useWindowsPosition";
+import { HiOutlinePlus } from "react-icons/hi";
 
 export const navItemsData = [
   {
@@ -20,7 +23,7 @@ export const navItemsData = [
     url: "/about",
   },
   {
-    name: "Contact Us",
+    name: "Contact",
     url: "/contact",
   },
 ];
@@ -31,18 +34,27 @@ type Props = {
 };
 
 const NavItems: React.FC<Props> = ({ activeItem, isMobile }) => {
+  const [_, setOpenSidebar] = useState(false);
+
+  const handleClose = (e: any) => {
+    if (e.target.id === "mobilescreen") {
+      {
+        setOpenSidebar(true);
+      }
+    }
+  };
+
+  const windowPosition = useWindowPosition();
   return (
     <>
-      <div className="hidden 898px:flex">
+      <div className="hidden 991px:flex">
         {navItemsData &&
           navItemsData.map((i, index) => (
             <Link href={`${i.url}`} key={index} passHref>
               <span
-                className={`${
-                  activeItem === index
-                    ? "dark:text-[#325cf2] font-semibold text-[#397CFD]"
-                    : "text-black"
-                } text-[18px] px-6 font-Poppins font-[400]`}
+                className={`text-[16px] px-6 font-Poppins font-[400]  text-white
+                //  ${windowPosition > 0 ? "text-white" : "text-black"}
+                `}
               >
                 {i.name}
               </span>
@@ -50,18 +62,29 @@ const NavItems: React.FC<Props> = ({ activeItem, isMobile }) => {
           ))}
       </div>
       {isMobile && (
-        <div className="898px:hidden mt-5">
-             <div className="w-full text-center py-6">
+        <div className="991px:hidden mt-5">
+             <div className="w-full flex flex-row items-center justify-between text-center py-3 px-5 mb-4">
                 <Link href={"/"}>
                   <Image
-                    src={require("../../public/assests/Logo.png")}
+                    src={require("../../public/assests/trigger-logo.svg")}
                     alt=""
-                    width={200}
+                    width={120}
                     height={300}
-                    className="w-100 h-auto rounded-full ml-[20px] cursor-pointer"
+                    className="w-100 h-auto rounded-full cursor-pointer"
                     />
                 </Link>
-          </div>
+                <HiOutlinePlus
+                  size={30}
+                  className= "p-1 rounded"
+                  style={{
+                    color: '#fff',
+                    background: '#315aef',
+                    cursor: 'pointer',
+                  }}
+                  id="mobilescreen"
+                  onClick={handleClose}
+                />
+            </div>
             {navItemsData &&
               navItemsData.map((i, index) => (
                 <Link href={`${i.url}`} passHref key={index}>
