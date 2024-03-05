@@ -36,6 +36,7 @@
 }
 .b-shape-1 .b-shape-1-bg{
     z-index: 1000;
+    background-repeat: no-repeat;
     background-image: url(../../public/assests/shape-1.png);
 }
 

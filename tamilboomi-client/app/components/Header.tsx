@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React, { FC, useEffect, useState } from "react";
 import NavItems from "../utils/NavItems";
-import { HiOutlineMenuAlt3, HiOutlineUserCircle, HiUser } from "react-icons/hi";
+import { HiOutlineMenuAlt3, HiOutlineUserCircle, HiUser, HiOutlinePlus } from "react-icons/hi";
 import CustomModal from "../utils/CustomModal";
 import "../styles/navbar.css";
 import Login from "../components/Auth/Login";
@@ -74,7 +74,7 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
   }
 
   const handleClose = (e: any) => {
-    if (e.target.id === "screen") {
+    if (e.target.id === "screen" || e.target.id === "close-mobile-slider") {
       {
         setOpenSidebar(false);
       }
@@ -127,7 +127,7 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
                     width={30}
                     height={30}
                     className="w-[30px] h-[30px] rounded-full cursor-pointer select-none"
-                    style={{border: activeItem === 5 ? "2px solid #37a39a" : "none"}}
+                    style={{border: "2px solid rgb(255 255 255 / 27%);"}}
                   />
                 </Link>
               ) : (
@@ -154,6 +154,28 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
             id="screen"
           >
             <div className="w-[100%] 768px:w-[40%] fixed z-[999999999] h-screen bg-white top-0 right-0">
+              <div className="w-full flex flex-row items-center justify-between text-center py-3 px-5 mb-4">
+                  <Link href={"/"}>
+                    <Image
+                      src={require("../../public/assests/trigger-logo.svg")}
+                      alt=""
+                      width={120}
+                      height={300}
+                      className="w-100 h-auto rounded-full cursor-pointer"
+                      />
+                  </Link>
+                  <HiOutlinePlus
+                    size={30}
+                    className= "p-1 rounded"
+                    style={{
+                      color: '#fff',
+                      background: '#315aef',
+                      cursor: 'pointer',
+                    }}
+                    id="close-mobile-slider"
+                    onClick={handleClose}
+                  />
+              </div>
               <NavItems activeItem={activeItem} isMobile={true} />
               {userData?.user ? (
                 <Link href={"/profile"}>  

@@ -3,7 +3,7 @@ import React, {useState } from "react";
 
 import Image from "next/image";
 import useWindowPosition from "../hooks/useWindowsPosition";
-import { HiOutlinePlus } from "react-icons/hi";
+// import { HiOutlinePlus } from "react-icons/hi";
 
 export const navItemsData = [
   {
@@ -63,28 +63,6 @@ const NavItems: React.FC<Props> = ({ activeItem, isMobile }) => {
       </div>
       {isMobile && (
         <div className="991px:hidden mt-5">
-             <div className="w-full flex flex-row items-center justify-between text-center py-3 px-5 mb-4">
-                <Link href={"/"}>
-                  <Image
-                    src={require("../../public/assests/trigger-logo.svg")}
-                    alt=""
-                    width={120}
-                    height={300}
-                    className="w-100 h-auto rounded-full cursor-pointer"
-                    />
-                </Link>
-                <HiOutlinePlus
-                  size={30}
-                  className= "p-1 rounded"
-                  style={{
-                    color: '#fff',
-                    background: '#315aef',
-                    cursor: 'pointer',
-                  }}
-                  id="mobilescreen"
-                  onClick={handleClose}
-                />
-            </div>
             {navItemsData &&
               navItemsData.map((i, index) => (
                 <Link href={`${i.url}`} passHref key={index}>

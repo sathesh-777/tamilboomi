@@ -32,20 +32,20 @@ const Hero: FC<Props> = (props) => {
     ) : (
     <section className="hero-banner-1">
       {/* shape */}
-      {/* <div className="shape-wrap">
+      <div className="shape-wrap">
         <div className="b-shape-1">
-          <img className="b-shape-1-bg" />
+          <img className="b-shape-1-bg"/>
         </div>
         <div className="b-shape-2">
           <img src="../../../public/assests/shape-2.png" alt="" />
         </div>
         <div className="b-shape-3">
-          <img src="../../../public/assests/shape-3.png" alt="" />
+          <img src="../../../public/assests/shape-3.png" alt="" />1
         </div>
         <div className="b-shape-4">
           <img src="../../../public/assests/shape-4.png" alt="" />
         </div>
-      </div> */}
+      </div>
       <div className="container">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-5/12 lg:w-7/12 px-3">
@@ -69,25 +69,25 @@ const Hero: FC<Props> = (props) => {
               />
               <Image
                  src={require("../../../public/assests/book.svg")}
-                width={150}
+                width={100}
                 alt=""
                 className="w-50 h-auto hero-image absolute bottom-right floating"
               />
               <Image
                  src={require("../../../public/assests/money.svg")}
-                width={150}
+                width={100}
                 alt=""
                 className="w-50 h-auto hero-image absolute top-left floating"
               />
               <Image
                  src={require("../../../public/assests/target.svg")}
-                width={150}
+                width={100}
                 alt=""
                 className="w-50 h-auto hero-image absolute bottom-left floating"
               />
               <Image
                  src={require("../../../public/assests/calender.svg")}
-                width={150}
+                width={100}
                 alt=""
                 className="w-50 h-auto hero-image absolute top-right floating"
               />
