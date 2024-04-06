@@ -11,7 +11,7 @@ const DynamicComponentWithNoSSR = dynamic(
 
 const Page = () => {
   return (
-    <div className="text-black">
+    <div className="bg-[#FFFFFF]">
       <Heading
         title="Elearning - Admin"
         description="ELearning is a platform for students to learn and get help from teachers"
