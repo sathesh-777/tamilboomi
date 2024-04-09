@@ -56,6 +56,14 @@
     animation: animationFramesTwo 20s infinite linear;
 }
 
+.img-flt{
+    @media (max-width: 556px) {
+        width: 80px;
+    }
+    @media (max-width: 330px) {
+        width: 70px;
+    }
+}
 
 .hero-image{
     filter: drop-shadow(5px 20px 10px rgba(0, 0, 0, 0.5));
@@ -256,7 +264,7 @@
         font-size: 2rem !important;
     }
     .trigger-hero-wrap{
-        gap: 3rem;
+        gap: 1rem;
     }
 }
 
@@ -271,41 +279,78 @@
     margin-right: auto;
     padding-left: 1rem;
     padding-right: 1rem;
-  }
-  
-  @media (min-width: 576px) {
+}
+
+@media (min-width: 576px) {
     .container {
         max-width: 540px;
     }
-  }
+}
 
-  @media (min-width: 640px) {
+@media (min-width: 640px) {
     .container {
       max-width: 640px;
     }
-  }
-  
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
     .container {
         max-width: 750px;
     }
-  }
-  
-  @media (min-width: 992px) {
+}
+
+@media (min-width: 992px) {
     .container {
         max-width: 960px;
     }
-  }
-  
-  @media (min-width: 1200px) {
+}
+
+@media (min-width: 1200px) {
     .container {
         max-width: 1170px;
     }
+}
+
+/* Adding new breakpoints for larger screens */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px; /* Adjust for large screens */
+    }
+}
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1480px; /* Adjust for extra-large screens */
+    }
+}
+
+@media (min-width: 1800px) {
+    .container {
+        max-width: 90%; /* Dynamic width for very large screens */
+    }
+}
+
+
+.nav-items {
+    position: relative;
+    display: inline-block;
   }
   
-  @media (min-width: 1200px) {
-    .container {
-      max-width: 1170px;
-    }
+  .nav-items::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    margin: 0 2px;
+    bottom: -8px; /* Adjust based on your design */
+    width: 100%;
+    height: 2px; /* Thickness of the underline */
+    background: white; /* Color of the underline */
+    transform: scaleX(0);
+    transform-origin: center; /* Ensures the scaling animation starts from the left */
+    transition: transform 0.3s ease; /* Animation timing can be adjusted */
+  }
+  
+  .nav-items:hover::after, .nav-items.active::after{
+    transform: scaleX(1);
   }
   
