@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React, { FC, useEffect, useState } from "react";
 import NavItems from "../utils/NavItems";
-import { HiOutlineMenuAlt3, HiOutlineUserCircle, HiUser, HiOutlinePlus } from "react-icons/hi";
+import { HiOutlineMenuAlt3, HiOutlineUserCircle, HiUser} from "react-icons/hi";
 import CustomModal from "../utils/CustomModal";
 import "../styles/navbar.css";
 import Login from "../components/Auth/Login";
@@ -40,6 +40,14 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
     skip: !logout ? true : false,
   });
 
+  const handleClose = (e: any) => {
+    if (e.target.id === "screen" || e.target.id === "close-mobile-slider") {
+      {
+        setOpenSidebar(false);
+      }
+    }
+  };
+
   useEffect(() => {
     if(!isLoading){
       if (!userData) {
@@ -63,6 +71,19 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
     }
   }, [data, userData, isLoading, socialAuth, refetch, isSuccess]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 992) {
+        setOpenSidebar(false);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []); 
+
   if (typeof window !== "undefined") {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 85) {
@@ -73,13 +94,6 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
     });
   }
 
-  const handleClose = (e: any) => {
-    if (e.target.id === "screen" || e.target.id === "close-mobile-slider") {
-      {
-        setOpenSidebar(false);
-      }
-    }
-  };
 
   return (
    <>
@@ -153,7 +167,7 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
             onClick={handleClose}
             id="screen"
           >
-            <div className="w-[100%] 768px:w-[40%] fixed z-[999999999] h-screen bg-white top-0 right-0">
+            <div className="w-[70%] 426px:w-[60%] 768px:w-[40%] fixed z-[999999999] h-screen bg-white top-0 right-0">
               <div className="w-full flex flex-row items-center justify-between text-center py-3 px-5 mb-4">
                   <Link href={"/"}>
                     <Image
@@ -164,17 +178,6 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
                       className="w-100 h-auto rounded-full cursor-pointer"
                       />
                   </Link>
-                  <HiOutlinePlus
-                    size={30}
-                    className= "p-1 rounded"
-                    style={{
-                      color: '#fff',
-                      background: '#315aef',
-                      cursor: 'pointer',
-                    }}
-                    id="close-mobile-slider"
-                    onClick={handleClose}
-                  />
               </div>
               <NavItems activeItem={activeItem} isMobile={true} />
               {userData?.user ? (

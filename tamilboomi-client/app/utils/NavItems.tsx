@@ -3,28 +3,35 @@ import React, { useState } from "react";
 
 import Image from "next/image";
 import useWindowPosition from "../hooks/useWindowsPosition";
-// import { HiOutlinePlus } from "react-icons/hi";
+import { HiHome, HiOutlineMap, HiBookOpen, HiUserGroup, HiMail } from "react-icons/hi";
+import { Icon } from "@mui/material";
+
 
 export const navItemsData = [
   {
     name: "Home",
     url: "/",
+    icon: HiHome,
   },
   {
     name: "Courses",
     url: "/courses",
+    icon: HiOutlineMap,
   },
   {
     name: "Blogs",
     url: "/blog",
+    icon: HiBookOpen,
   },
   {
     name: "About",
     url: "/about",
+    icon: HiUserGroup,
   },
   {
     name: "Contact",
     url: "/contact",
+    icon: HiMail,
   },
 ];
 
@@ -34,15 +41,7 @@ type Props = {
 };
 
 const NavItems: React.FC<Props> = ({ activeItem, isMobile }) => {
-  const [_, setOpenSidebar] = useState(false);
 
-  // const handleClose = (e: any) => {
-  //   if (e.target.id === "mobilescreen") {
-  //     {
-  //       setOpenSidebar(true);
-  //     }
-  //   }
-  // };
 
   const windowPosition = useWindowPosition();
   return (
@@ -51,7 +50,9 @@ const NavItems: React.FC<Props> = ({ activeItem, isMobile }) => {
         {navItemsData &&
           navItemsData.map((i, index) => (
             <Link href={`${i.url}`} key={index} passHref>
-              <span className={`nav-items ${activeItem === index ? "active" : ""}`}>
+              <span
+                className={`nav-items ${activeItem === index ? "active" : ""}`}
+              >
                 <span
                   className={`text-[16px] px-6 font-Poppins font-[400] text-white ${
                     windowPosition > 0 ? "text-white" : "text-black"
@@ -68,15 +69,16 @@ const NavItems: React.FC<Props> = ({ activeItem, isMobile }) => {
           {navItemsData &&
             navItemsData.map((i, index) => (
               <Link href={`${i.url}`} passHref key={index}>
-                <span
-                  className={`${
-                    activeItem === index
-                      ? "dark:text-[#37a39a] text-[#397CFD] active"
-                      : "text-black"
-                  } block py-5 text-[18px] px-6 font-Poppins font-[400]`}
+                <div
+                  className={`flex flex-row items-center px-3 ${
+                    activeItem === index ? "dark:text-black text-black bg-[#f0f0f0] mx-3 rounded-lg" : "text-[#7f7f7f]"
+                  }`}
                 >
-                  {i.name}
-                </span>
+                  {i.icon && <i.icon className={`nav-item-icon`} />}
+                  <span className={`block py-5 text-[1rem] px-6 font-Poppins font-[400]`}>
+                    {i.name}
+                  </span>
+                </div>
               </Link>
             ))}
         </div>
