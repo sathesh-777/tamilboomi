@@ -104,7 +104,7 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
       <header  className={`${
         active
           ? windowPosition > 0 && "fix-header sticky"
-          : "header-nav"
+          : "header-nav"  
       }`}
     >
       <div className="container">

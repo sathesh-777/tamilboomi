@@ -1,0 +1,30 @@
+.course-overview {
+    background-image: url(../../public/assests/page-bnr.png);
+    background-size: cover;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 150px 0 0;
+    min-height: 280px;
+}
+
+.course-thumbnail{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}   
+
+.feature-course-item{
+    position: relative;
+    overflow: hidden;
+    margin: 0 0 30px;
+}
+
+.course-card{
+    min-width: 420px;
+    z-index: 2;
+    padding: 25px 45px 0;
+    width: 100%;
+}
