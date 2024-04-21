@@ -8,6 +8,7 @@ import CoursePreview from "./CoursePreview";
 import { useCreateCourseMutation } from "../../../../redux/features/courses/coursesApi";
 import { toast } from "react-hot-toast";
 import { redirect } from "next/navigation";
+import { duration } from "@mui/material";
 
 type Props = {};
 
@@ -36,6 +37,9 @@ const CreateCourse = (props: Props) => {
     estimatedPrice: "",
     tags: "",
     level: "",
+    stack: "",
+    language: "",
+    duration: "",
     categories:"",
     demoUrl: "",
     thumbnail: "",
@@ -99,6 +103,9 @@ const CreateCourse = (props: Props) => {
       tags: courseInfo.tags,
       thumbnail: courseInfo.thumbnail,
       level: courseInfo.level,
+      stack: courseInfo.stack,
+      duration: courseInfo.duration,
+      language: courseInfo.language,
       demoUrl: courseInfo.demoUrl,
       totalVideos: courseContentData.length,
       benefits: formattedBenefits,

@@ -122,7 +122,7 @@ const Page = (props: Props) => {
                           : "No courses found in this category. Please try another one!"}
                       </p>
                     )} 
-                    <div className="flex flex-wrap">
+                    <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-44">
                       {courses &&
                         courses.map((item: any, index: number) => (
                           <CourseCard item={item} key={index} />

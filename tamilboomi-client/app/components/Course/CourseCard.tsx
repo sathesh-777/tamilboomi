@@ -11,7 +11,7 @@ type Props = {
 
 const CourseCard: FC<Props> = ({ item, isProfile }) => {
   return (
-    <div className="w-full md:w-1/2 lg:w-1/3">
+    <div className="w-full">
       <div className="feature-course-item">
         <div className="course-card">
           <Link
@@ -20,16 +20,17 @@ const CourseCard: FC<Props> = ({ item, isProfile }) => {
             }
           >
             <div className="hover:shadow-2xl bg-opacity-20 backdrop-blur border border-[#00000015] rounded-lg shadow-sm">
-              <Image
-                src={item.thumbnail?.url}
-                width={500}
-                height={300}
-                objectFit="contain"
-                className="rounded w-full course-thumbnail"
-                alt="course thumbnail"
-              />
-              <div className="p-5">
-                <h1 className="font-Poppins text-2xl font-semibold text-black">
+              <div className="relative w-full h-full">
+                <Image
+                  src={item.thumbnail?.url}
+                  width={500}
+                  height={300}
+                  className="rounded w-full course-thumbnail"
+                  alt="course thumbnail"
+                />
+              </div>
+              <div className="p-5 flex flex-col grow">
+                <h1 className="font-Poppins text-xl font-medium text-black">
                   {item.name}
                 </h1>
                 <div className="w-full flex items-center justify-between pt-2">

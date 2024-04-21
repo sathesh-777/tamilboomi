@@ -25,6 +25,5 @@
 .course-card{
     min-width: 420px;
     z-index: 2;
-    padding: 25px 45px 0;
     width: 100%;
 }
