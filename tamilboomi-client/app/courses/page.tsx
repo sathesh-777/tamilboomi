@@ -58,7 +58,7 @@ const Page = (props: Props) => {
             activeItem={1}
           />
           <section className="course-overview">
-            <div className="container">
+            <div className="container-2">
               <div className="row">
                 <div className="col-lg-12">
                   <h2 className="text-7xl">Courses</h2>
@@ -74,7 +74,7 @@ const Page = (props: Props) => {
             </div>
           </section>
           <section>
-            <div className="container">
+            <div className="container-2">
               <div className="row">
                 <div className="col-md-12">
                   <div>
@@ -86,13 +86,13 @@ const Page = (props: Props) => {
                       }
                     />
                     <br />
-                    <div className="w-full flex items-center flex-wrap gap-1">
+                    <div className="w-full flex items-center flex-wrap gap-5">
                       <div
-                        className={`h-[35px] ${
+                        className={`${
                           category === "All"
-                            ? "text-[#274fdb]"
+                            ? "bg-[#3773e8] text-[#fff]"
                             : "text-[#5d5a67]"
-                        } m-3 flex items-center font-medium  justify-center font-Poppins cursor-pointer hover:text-[#274fdb]`}
+                        } px-3 py-1 rounded-full flex items-center font-medium  justify-center font-Poppins cursor-pointer`}
                         onClick={() => setCategory("All")}
                       >
                         All
@@ -103,9 +103,9 @@ const Page = (props: Props) => {
                             <div
                               className={`h-[35px] ${
                                 category === item.title
-                                  ? "text-[#186dd1]"
+                                  ? "bg-[#3773e8] text-[#fff]"
                                   : "text-[#5d5a67]"
-                              } m-3 px-3 rounded-[30px] flex items-center justify-center font-Poppins cursor-pointer hover:text-[#274fdb]`}
+                              } px-3 py-1 rounded-full flex items-center justify-center font-Poppins cursor-pointer`}
                               onClick={() => setCategory(item.title)}
                             >
                               {item.title}
@@ -121,12 +121,14 @@ const Page = (props: Props) => {
                           ? "No courses found!"
                           : "No courses found in this category. Please try another one!"}
                       </p>
-                    )} 
-                    <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-44">
-                      {courses &&
-                        courses.map((item: any, index: number) => (
-                          <CourseCard item={item} key={index} />
-                        ))}
+                    )}
+                    <div className="flex flex-col items-center my-10">
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {courses &&
+                          courses.map((item: any, index: number) => (
+                            <CourseCard item={item} key={index} />
+                          ))}
+                      </div>
                     </div>
                   </div>
                 </div>

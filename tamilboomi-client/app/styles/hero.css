@@ -269,10 +269,6 @@
 }
 
 
-
-
-
-
 .container {
     width: 100%;
     margin-left: auto;
@@ -311,25 +307,38 @@
     }
 }
 
-/* Adding new breakpoints for larger screens */
 @media (min-width: 1400px) {
     .container {
-        max-width: 1320px; /* Adjust for large screens */
+        max-width: 1320px;
     }
 }
 
 @media (min-width: 1600px) {
     .container {
-        max-width: 1480px; /* Adjust for extra-large screens */
+        max-width: 1480px;
     }
 }
 
 @media (min-width: 1800px) {
     .container {
-        max-width: 90%; /* Dynamic width for very large screens */
+        max-width: 90%;
     }
 }
 
+
+.container-2{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem; 
+}
+
+@media (min-width: 1100px) {
+    .container-2 {
+        max-width: 1100px;
+    }
+}
 
 .nav-items {
     position: relative;

@@ -8,7 +8,6 @@ import CoursePreview from "./CoursePreview";
 import { useCreateCourseMutation } from "../../../../redux/features/courses/coursesApi";
 import { toast } from "react-hot-toast";
 import { redirect } from "next/navigation";
-import { duration } from "@mui/material";
 
 type Props = {};
 
