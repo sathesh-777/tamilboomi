@@ -4,6 +4,10 @@ import Ratings from "@/app/utils/Ratings";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { IoCheckmarkDoneOutline, IoCloseOutline } from "react-icons/io5";
+import { FaInfinity, FaMedal } from "react-icons/fa";
+import { HiCollection, HiPlay, HiCode, HiClock } from "react-icons/hi";
+import { BsPeopleFill } from "react-icons/bs";
+import { MdLightMode } from "react-icons/md";
 import { format } from "timeago.js";
 import CourseContentList from "../Course/CourseContentList";
 import { Elements } from "@stripe/react-stripe-js";
@@ -95,11 +99,13 @@ const CourseDetails = ({
         <div className="m-auto py-5">
           <div className="w-full flex flex-col-reverse 800px:flex-row">
             <div className="w-full 800px:w-[65%] 800px:pr-5">
-              <h1 className="text-[3.2rem] font-bold text-[#262525] leading-none">{data.name}</h1>
-              <p className="text-[1.3rem] text-black font-poppins font-[500] mt-5">
+              <h1 className="text-[3.2rem] font-bold text-[#262525] leading-none">
+                {data.name}
+              </h1>
+              <p className="text-[1.3rem] text-black font-poppins font-[500] mt-5 pb-3">
                 {data.description}
               </p>
-              <div className="flex items-center justify-between pt-3">
+              <div className="flex flex-col justify-start my-3 gap-3">
                 <div className="flex items-center">
                   <Ratings rating={data.ratings} />
                   <h5 className="text-black ">
@@ -110,8 +116,14 @@ const CourseDetails = ({
               </div>
 
               <br />
+              <div className="flex">
+                <span className="p-3 bg-[rgba(159,110,255,0.3)] rounded-full">
+                <MdLightMode className="text-[#9f6eff]"/>
+                </span>
+              </div>
+              <p className="py-3 text-[#9f6eff] font-semibold">Highly practical</p>
               <h1 className="text-[25px] font-Poppins font-[600] text-black ">
-                What you will learn from this course?
+                What You'll Learn
               </h1>
               <div>
                 {data.benefits?.map((item: any, index: number) => (
@@ -122,17 +134,56 @@ const CourseDetails = ({
                     <div className="w-[15px] mr-1">
                       <IoCheckmarkDoneOutline
                         size={20}
-                        className="text-black "
+                        className="text-[#9f6eff]"
                       />
                     </div>
                     <p className="pl-2 text-black ">{item.title}</p>
                   </div>
                 ))}
                 <br />
+                <div className="flex items-center justify-center">
+                  <div className="border border-[rgba(119, 118, 118, 0.23)] border-2 rounded px-5 py-3">
+                    <h3 className="px-5 text-[1.2rem] font-semibold py-2">
+                      COURSE OVERVIEW
+                    </h3>
+                    <div className="px-5 py-2 flex flex-col gap-3">
+                      <div className="flex text-[1.3rem] flex-row items-center gap-2">
+                        <HiCollection className="text-[rgba(35,35,35,0.6)]" />
+                        <p className="text-[1.2rem]">Beginner to Pro</p>
+                      </div>
+                      <div className="flex text-[1.3rem] flex-row items-center gap-2">
+                        <HiPlay className="text-[rgba(35,35,35,0.6)]" />
+                        <p className="text-[1.2rem]">{data.duration} of HD Video</p>
+                      </div>
+                      <div className="flex text-[1.3rem] flex-row items-center gap-2">
+                        <HiCode className="text-[rgba(35,35,35,0.6)]" />
+                        <p className="text-[1.2rem]">Hands-on exercises</p>
+                      </div>
+                      <div className="flex text-[1.3rem] flex-row items-center gap-2">
+                        <FaMedal className="text-[rgba(35,35,35,0.6)]" />
+                        <p className="text-[1.2rem]">Certificate of completion</p>
+                      </div>
+                      <div className="flex text-[1.3rem] flex-row items-center gap-2">
+                        <FaInfinity className="text-[rgba(35,35,35,0.6)]" />
+                        <p className="text-[1.2rem]">Lifetime access</p>
+                      </div>
+                      <div className="flex text-[1.3rem] flex-row items-center gap-2">
+                        <HiClock className="text-[rgba(35,35,35,0.6)]" />
+                        <p className="text-[1.2rem]">Learn at your own pace</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <br />
               </div>
+              <div className="flex">
+                <span className="p-3 bg-[rgba(255,165,51,0.3)] rounded-full">
+                <BsPeopleFill className="text-[#ffa533]"/>
+                </span>
+              </div>
+              <p className="py-3 text-[#ffa533] font-semibold">Target student</p>
               <h1 className="text-[25px] font-Poppins font-[600] text-black ">
-                What are the prerequisites for starting this course?
+                Who Is This For?
               </h1>
               {data.prerequisites?.map((item: any, index: number) => (
                 <div
@@ -140,7 +191,7 @@ const CourseDetails = ({
                   key={index}
                 >
                   <div className="w-[15px] mr-1">
-                    <IoCheckmarkDoneOutline size={20} className="text-black " />
+                    <IoCheckmarkDoneOutline size={20} className="text-[#ffa533]" />
                   </div>
                   <p className="pl-2 text-black ">{item.title}</p>
                 </div>
@@ -149,14 +200,14 @@ const CourseDetails = ({
               <br />
               <div>
                 <h1 className="text-[25px] font-Poppins font-[600] text-black ">
-                  Course Overview
+                  Course Chapters
                 </h1>
                 <CourseContentList data={data?.courseData} isDemo={true} />
               </div>
               <br />
               <br />
               {/* course description */}
-              <div className="w-full">
+              {/* <div className="w-full">
                 <h1 className="text-[25px] font-Poppins font-[600] text-black ">
                   Course Details
                 </h1>
@@ -165,9 +216,9 @@ const CourseDetails = ({
                 </p>
               </div>
               <br />
-              <br />
+              <br /> */}
               <div className="w-full">
-                <div className="800px:flex items-center">
+                {/* <div className="800px:flex items-center">
                   <Ratings rating={data?.ratings} />
                   <div className="mb-2 800px:mb-[unset]" />
                   <h5 className="text-[25px] font-Poppins text-black ">
@@ -177,7 +228,7 @@ const CourseDetails = ({
                     Course Rating • {data?.reviews?.length} Reviews
                   </h5>
                 </div>
-                <br />
+                <br /> */}
                 {(data?.reviews && [...data.reviews].reverse()).map(
                   (item: any, index: number) => (
                     <div className="w-full pb-4" key={index}>
@@ -252,15 +303,15 @@ const CourseDetails = ({
             <div className="w-full 800px:w-[35%] relative">
               <div className="sticky top-[100px] left-0 z-50 w-full">
                 <CoursePlayer videoUrl={data?.demoUrl} title={data?.title} />
-                <div className="flex items-center">
-                  <h1 className="pt-5 text-[25px] text-black ">
+                <div className="flex items-center gap-3 my-3">
+                  <h1 className="text-[25px] text-black ">
                     {data.price === 0 ? "Free" : data.price + "₹"}
                   </h1>
-                  <h5 className="pl-3 text-[20px] mt-2 line-through opacity-80 text-black ">
+                  <h5 className="text-[18px] line-through opacity-80 text-black ">
                     {data.estimatedPrice}₹
                   </h5>
 
-                  <h4 className="pl-5 pt-4 text-[22px] text-black ">
+                  <h4 className="text-[22px] text-black ">
                     {discountPercentagePrice}% Off
                   </h4>
                 </div>
@@ -282,10 +333,43 @@ const CourseDetails = ({
                   )}
                 </div>
                 <br />
-                <p className="pb-1 text-black ">• Source code included</p>
-                <p className="pb-1 text-black ">• Full lifetime access</p>
-                <p className="pb-1 text-black ">• Certificate of completion</p>
-                <p className="pb-3 800px:pb-1 text-black ">• Premium Support</p>
+                <div>
+                  <h2 className="text-center text-[1.1rem] font-semibold pb-2">Precise. Practical. Proficient</h2>
+                  <p className="text-center">Frustrated with disjointed tutorials or unclear instructors? Try our course! It's organized into short, straightforward videos that efficiently cover both theory and practical skills.</p>
+                </div>
+                {/* <div className="flex items-center justify-center">
+                  <div className="border border-[rgba(119, 118, 118, 0.23)] border-2 rounded px-5 py-3">
+                    <h3 className="px-5 text-[1.2rem] font-semibold py-2">
+                      COURSE OVERVIEW
+                    </h3>
+                    <div className="px-5 py-2 flex flex-col gap-3">
+                      <div className="flex text-[1.3rem] flex-row items-center gap-2">
+                        <HiCollection className="text-[rgba(35,35,35,0.6)]" />
+                        <p className="text-[1.2rem]">Beginner to Pro</p>
+                      </div>
+                      <div className="flex text-[1.3rem] flex-row items-center gap-2">
+                        <HiPlay className="text-[rgba(35,35,35,0.6)]" />
+                        <p className="text-[1.2rem]">{data.duration} of HD Video</p>
+                      </div>
+                      <div className="flex text-[1.3rem] flex-row items-center gap-2">
+                        <HiCode className="text-[rgba(35,35,35,0.6)]" />
+                        <p className="text-[1.2rem]">Hands-on exercises</p>
+                      </div>
+                      <div className="flex text-[1.3rem] flex-row items-center gap-2">
+                        <FaMedal className="text-[rgba(35,35,35,0.6)]" />
+                        <p className="text-[1.2rem]">Certificate of completion</p>
+                      </div>
+                      <div className="flex text-[1.3rem] flex-row items-center gap-2">
+                        <FaInfinity className="text-[rgba(35,35,35,0.6)]" />
+                        <p className="text-[1.2rem]">Lifetime access</p>
+                      </div>
+                      <div className="flex text-[1.3rem] flex-row items-center gap-2">
+                        <HiClock className="text-[rgba(35,35,35,0.6)]" />
+                        <p className="text-[1.2rem]">Learn at your own pace</p>
+                      </div>
+                    </div>
+                  </div>
+                </div> */}
               </div>
             </div>
           </div>
