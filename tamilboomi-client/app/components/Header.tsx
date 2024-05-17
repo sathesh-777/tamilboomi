@@ -14,6 +14,7 @@ import { useLogOutQuery, useSocialAuthMutation } from "@/redux/features/auth/aut
 import { toast } from "react-hot-toast";
 import { useLoadUserQuery } from "@/redux/features/api/apiSlice";
 import Loader from "./Loader/Loader";
+import { colors } from "@mui/material";
 
 type Props = {
   open: boolean;
@@ -59,7 +60,7 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
 
   if (typeof window !== "undefined") {
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 120) {
+      if (window.scrollY > 85) {
         setActive(true);
       } else {
         setActive(false);
@@ -89,7 +90,7 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
             : "w-full !border-b !border-[#00000022] h-[80px] z-[80]"
         }`}
       >
-        <div className="1000px:m-auto py-2 h-full 1000px:px-32">
+        <div className="w-100 lg:px-32">
           <div className="w-full h-[80px] flex items-center justify-between p-3">
             <div>
             <Link href={"/"}>
@@ -109,7 +110,7 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
               <div className="800px:hidden">
                 <HiOutlineMenuAlt3
                   size={25}
-                  className="cursor-pointer dark:text-white text-black"
+                  className="cursor-pointer text-black"
                   onClick={() => setOpenSidebar(true)}
                 />
               </div>
@@ -142,10 +143,10 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
             onClick={handleClose}
             id="screen"
           >
-            <div className="w-[70%] fixed z-[999999999] h-screen bg-white dark:bg-slate-900 dark:bg-opacity-90 top-0 right-0">
+            <div className="w-[70%] fixed z-[999999999] h-screen bg-white top-0 right-0">
               <NavItems activeItem={activeItem} isMobile={true} />
               {userData?.user ? (
-                <Link href={"/profile"}>
+                <Link href={"/profile"}>  
                   <Image
                     src={userData?.user.avatar ? userData.user.avatar.url : avatar}
                     alt=""
@@ -162,10 +163,12 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
                   onClick={() => setOpen(true)}
                 />
               )}
+              <p className="text-black block py-5 text-[18px] px-6 font-Poppins font-[400] cursor-pointer"
+                onClick={() => { setOpen(true); setOpenSidebar(false); }}>Login</p>
               <br />
               <br />
               <p className="text-[16px] px-2 pl-5 text-black dark:text-white">
-                Copyright © 2023 Tamilboomi
+                Copyright © 2023 ELearning
               </p>
             </div>
           </div>

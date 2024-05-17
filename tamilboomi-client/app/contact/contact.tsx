@@ -1,7 +1,7 @@
 import React from "react";
 import { styles } from "../styles/style";
 
-const contact = () => {
+const Contact = () => {
     return (
         <div className="text-black dark:text-white my-20">
             <div className="w-[95%] 800px:w-[85%] m-auto">
@@ -106,4 +106,4 @@ const contact = () => {
     );
 };
 
-export default contact;
+export default Contact;

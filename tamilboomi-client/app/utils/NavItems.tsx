@@ -16,6 +16,10 @@ export const navItemsData = [
     url: "/blog",
   },
   {
+    name: "About",
+    url: "/about",
+  },
+  {
     name: "Contact Us",
     url: "/contact",
   },
@@ -48,7 +52,7 @@ const NavItems: React.FC<Props> = ({ activeItem, isMobile }) => {
       {isMobile && (
         <div className="800px:hidden mt-5">
              <div className="w-full text-center py-6">
-             <Link href={"/"}>
+                <Link href={"/"}>
                   <Image
                     src={require("../../public/assests/Logo.png")}
                     alt=""
@@ -60,7 +64,7 @@ const NavItems: React.FC<Props> = ({ activeItem, isMobile }) => {
           </div>
             {navItemsData &&
               navItemsData.map((i, index) => (
-                <Link href="/" passHref key={index}>
+                <Link href={`${i.url}`} passHref key={index}>
                   <span
                     className={`${
                       activeItem === index

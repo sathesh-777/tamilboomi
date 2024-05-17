@@ -58,7 +58,7 @@ const Signup: FC<Props> = ({ setRoute }) => {
 
   return (
     <div className="w-full">
-      <h1 className={`${styles.title}`}>Join to Tamilboomi</h1>
+      <h1 className={`${styles.title}`}>Join to ELearning</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label className={`${styles.label}`} htmlFor="email">
@@ -135,7 +135,7 @@ const Signup: FC<Props> = ({ setRoute }) => {
         <h5 className="text-center pt-4 font-Poppins text-[14px] text-black">
           Or join with
         </h5>
-        <div className="flex items-center justify-center my-3">
+         <div className="flex items-center justify-center my-3">
           <FcGoogle size={30} className="cursor-pointer mr-2" />
           <AiFillGithub size={30} className="cursor-pointer ml-2" />
         </div>

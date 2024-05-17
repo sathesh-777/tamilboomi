@@ -9,14 +9,14 @@ type Props = {};
 
 const Page = (props: Props) => {
   const [open, setOpen] = useState(false);
-  const [activeItem, setActiveItem] = useState(2);
+  const [activeItem, setActiveItem] = useState(3);
   const [route, setRoute] = useState("Login");
 
   return (
     <div>
       <Heading
-        title="About us - Tamilboomi"
-        description="Tamilboomi is a learning management system for helping programmers."
+        title="About us - Elearning"
+        description="Elearning is a learning management system for helping programmers."
         keywords="programming,mern"
       />
       <Header

@@ -55,7 +55,7 @@ const Login: FC<Props> = ({ setRoute, setOpen,refetch }) => {
 
   return (
     <div className="w-full">
-      <h1 className={`${styles.title}`}>Login with Tamilboomi</h1>
+      <h1 className={`${styles.title}`}>Login with ELearning</h1>
       <form onSubmit={handleSubmit}>
         <label className={`${styles.label}`} htmlFor="email">
           Enter your Email
@@ -113,7 +113,7 @@ const Login: FC<Props> = ({ setRoute, setOpen,refetch }) => {
         <h5 className="text-center pt-4 font-Poppins text-[14px] text-black">
           Or join with
         </h5>
-        <div className="flex items-center justify-center my-3">
+         <div className="flex items-center justify-center my-3">
           <FcGoogle size={30} className="cursor-pointer mr-2"
           onClick={() => signIn("google")}
           />
