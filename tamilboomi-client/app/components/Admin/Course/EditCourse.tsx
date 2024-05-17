@@ -8,6 +8,7 @@ import CoursePreview from "./CoursePreview";
 import { useEditCourseMutation, useGetAllCoursesQuery } from "../../../../redux/features/courses/coursesApi";
 import { toast } from "react-hot-toast";
 import { redirect } from "next/navigation";
+import { duration } from "@mui/material";
 
 type Props = {
     id: string;
@@ -47,6 +48,9 @@ const EditCourse:FC<Props> = ({id}) => {
         estimatedPrice: editCourseData?.estimatedPrice,
         tags: editCourseData.tags,
         level: editCourseData.level,
+        duration: editCourseData.duration,
+        language: editCourseData.language,
+        stack: editCourseData.stack,
         categories:editCourseData.categories,
         demoUrl: editCourseData.demoUrl,
         thumbnail: editCourseData?.thumbnail?.url,
@@ -65,6 +69,9 @@ const EditCourse:FC<Props> = ({id}) => {
     estimatedPrice:  "",
     tags: "",
     level:  "",
+    duration:  "",
+    language:  "",
+    stack:  "",
     categories:"",
     demoUrl:  "",
     thumbnail:  "",
@@ -125,6 +132,9 @@ const EditCourse:FC<Props> = ({id}) => {
       tags: courseInfo.tags,
       thumbnail: courseInfo.thumbnail,
       level: courseInfo.level,
+      stack: courseInfo.stack,
+      duration: courseInfo.duration,
+      language: courseInfo.language,
       demoUrl: courseInfo.demoUrl,
       totalVideos: courseContentData.length,
       benefits: formattedBenefits,
@@ -142,7 +152,7 @@ const EditCourse:FC<Props> = ({id}) => {
   };
 
   return (
-    <div className="w-full flex min-h-screen">
+    <div className="w-full flex min-h-screen bg-white">
       <div className="w-[80%]">
         {active === 0 && (
           <CourseInformation

@@ -2,8 +2,9 @@
 import Link from "next/link";
 import React, { FC, useEffect, useState } from "react";
 import NavItems from "../utils/NavItems";
-import { HiOutlineMenuAlt3, HiOutlineUserCircle } from "react-icons/hi";
+import { HiOutlineMenuAlt3, HiOutlineUserCircle, HiUser} from "react-icons/hi";
 import CustomModal from "../utils/CustomModal";
+import "../styles/navbar.css";
 import Login from "../components/Auth/Login";
 import SignUp from "../components/Auth/SignUp";
 import Verification from "../components/Auth/Verification";
@@ -15,6 +16,9 @@ import { toast } from "react-hot-toast";
 import { useLoadUserQuery } from "@/redux/features/api/apiSlice";
 import Loader from "./Loader/Loader";
 import { colors } from "@mui/material";
+import useWindowPosition from "../hooks/useWindowsPosition";
+import Logo from '../../public/assests/trigger-logo.svg';
+import StickyTrigger from '../../public/assests/sticky-trigger.svg';
 
 type Props = {
   open: boolean;
@@ -29,11 +33,20 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
   const [openSidebar, setOpenSidebar] = useState(false);
   const {data:userData,isLoading,refetch} = useLoadUserQuery(undefined,{});
   const { data } = useSession();
+  const windowPosition = useWindowPosition();
   const [socialAuth, { isSuccess, error }] = useSocialAuthMutation();
   const [logout, setLogout] = useState(false);
   const {} = useLogOutQuery(undefined, {
     skip: !logout ? true : false,
   });
+
+  const handleClose = (e: any) => {
+    if (e.target.id === "screen" || e.target.id === "close-mobile-slider") {
+      {
+        setOpenSidebar(false);
+      }
+    }
+  };
 
   useEffect(() => {
     if(!isLoading){
@@ -58,6 +71,19 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
     }
   }, [data, userData, isLoading, socialAuth, refetch, isSuccess]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 992) {
+        setOpenSidebar(false);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []); 
+
   if (typeof window !== "undefined") {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 85) {
@@ -68,13 +94,6 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
     });
   }
 
-  const handleClose = (e: any) => {
-    if (e.target.id === "screen") {
-      {
-        setOpenSidebar(false);
-      }
-    }
-  };
 
   return (
    <>
@@ -82,38 +101,38 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
     isLoading ? (
       <Loader />
     ) : (
-      <div className="w-full relative">
-      <div
-        className={`${
-          active
-            ? " bg-white fixed top-0 left-0 w-full h-[80px] z-[80] border-b shadow-xl transition duration-500"
-            : "w-full !border-b !border-[#00000022] h-[80px] z-[80]"
-        }`}
-      >
-        <div className="w-100 lg:px-32">
-          <div className="w-full h-[80px] flex items-center justify-between p-3">
+      <header  className={`${
+        active
+          ? windowPosition > 0 && "fix-header sticky"
+          : "header-nav"  
+      }`}
+    >
+      <div className="container">
+          <div className="w-full h-[80px] flex items-center justify-between" style={{ flexBasis: 'auto' }}>
             <div>
-            <Link href={"/"}>
+                <Link href={"/"}>
                   <Image
-                    src={require("../../public/assests/Logo.png")}
+                    src={active && windowPosition > 0 ? StickyTrigger : Logo}
                     alt=""
-                    width={200}
-                    height={300}
-                    className="w-100 h-auto rounded-full  cursor-pointer bg-white px-3"
+                    width={150}
+                    height={50}
+                    className="w-100 cursor-pointer py-2"
                     />
                 </Link>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center nav-items-list">
               <NavItems activeItem={activeItem} isMobile={false} />
               
               {/* only for mobile */}
-              <div className="800px:hidden">
+              <div className="991px:hidden">
                 <HiOutlineMenuAlt3
-                  size={25}
-                  className="cursor-pointer text-black"
+                  size={35}
+                  className="cursor-pointer rounded-sm color-[#1d4ed8] bg-white p-2 mr-4"
                   onClick={() => setOpenSidebar(true)}
                 />
               </div>
+            </div>
+            <div className="flex items-center">
               {userData ? (
                 <Link href={"/profile"} className="select-none ml-2">
                   <Image
@@ -122,19 +141,24 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
                     width={30}
                     height={30}
                     className="w-[30px] h-[30px] rounded-full cursor-pointer select-none"
-                    style={{border: activeItem === 5 ? "2px solid #37a39a" : "none"}}
+                    style={{border: "2px solid rgba(255, 255, 255, 0.27)"}}
                   />
                 </Link>
               ) : (
-                <HiOutlineUserCircle
-                  size={25}
-                  className="hidden 800px:block cursor-pointer text-black"
-                  onClick={() => setOpen(true)}
-                />
+                  <>
+                    <div className="px-3 hidden 426px:flex text-white rounded-lg pb-2 pt-1 cursor-pointer"
+                         onClick={() => setOpen(true)} style={{border: '2px solid rgb(255 255 255 / 20%)'}} >
+                      Signup
+                    </div>
+                    <HiUser
+                      size={40}
+                      className="block 426px:hidden rounded-full cursor-pointer dark:text-white p-2 text-black"
+                      onClick={() => setOpen(true)} style={{border: '2px solid #fff'}}
+                    />
+                  </>
               )}
             </div>
           </div>
-        </div>
 
         {/* mobile sidebar */}
         {openSidebar && (
@@ -143,7 +167,18 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
             onClick={handleClose}
             id="screen"
           >
-            <div className="w-[70%] fixed z-[999999999] h-screen bg-white top-0 right-0">
+            <div className="w-[70%] 426px:w-[60%] 768px:w-[40%] fixed z-[999999999] h-screen bg-white top-0 right-0">
+              <div className="w-full flex flex-row items-center justify-between text-center py-3 px-5 mb-4">
+                  <Link href={"/"}>
+                    <Image
+                      src={require("../../public/assests/trigger-logo.svg")}
+                      alt=""
+                      width={120}
+                      height={300}
+                      className="w-100 h-auto rounded-full cursor-pointer"
+                      />
+                  </Link>
+              </div>
               <NavItems activeItem={activeItem} isMobile={true} />
               {userData?.user ? (
                 <Link href={"/profile"}>  
@@ -163,8 +198,6 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
                   onClick={() => setOpen(true)}
                 />
               )}
-              <p className="text-black block py-5 text-[18px] px-6 font-Poppins font-[400] cursor-pointer"
-                onClick={() => { setOpen(true); setOpenSidebar(false); }}>Login</p>
               <br />
               <br />
               <p className="text-[16px] px-2 pl-5 text-black dark:text-white">
@@ -216,7 +249,7 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
           )}
         </>
       )}
-    </div>
+    </header>
     )
    }
    </>

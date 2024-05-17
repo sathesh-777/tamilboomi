@@ -3,8 +3,9 @@ import { useGetHeroDataQuery } from "@/redux/features/layout/layoutApi";
 import Image from "next/image";
 import Link from "next/link";
 import React, { FC, useState } from "react";
-import { BiSearch } from "react-icons/bi";
+// import { BiSearch } from "react-icons/bi";
 import Loader from "../Loader/Loader";
+import "../../styles/hero.css";
 import { useRouter } from "next/navigation";
 
 type Props = {};
@@ -29,70 +30,96 @@ const Hero: FC<Props> = (props) => {
     isLoading ? (
       <Loader />
     ) : (
-      <div className=" 1000px:flex 1000px:px-32 1000px:py-20 1000px:flex-row-reverse justify-center items-center">
-      <div className="flex justify-center items-center w-full">
-        <Image
-           src={require("../../../public/assests/hero.svg")}
-          width={400}
-          height={400}
-          alt=""
-          className="w-full h-auto"
-        />
-      </div>
-      <div className="1000px:w-full relative px-4">
-        <h2 className="dark:text-white text-[#000000c7] text-[20px] w-full leading-loose xl:text-6xl md:text-4xl font-[600] font-Josefin  ">
-        Knowledge for everyone, everywhere.
-        </h2>
-        <p className="dark:text-[#edfff4] text-start text-[#000000ac] font-Josefin font-[600] text-[18px]">
-        Accessible education for all.
-        </p>
-        <br />
-        <div className="1500px:w-[55%] 1100px:w-[78%] w-[90%] h-[50px] bg-transparent relative">
-          <input
-            type="search"
-            placeholder="Search Courses..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="bg-transparent border rounded-[5px] p-2 w-full h-full outline-none text-[#000] text-[20px] font-[500] font-Josefin"
+    <section className="hero-banner-1">
+      {/* shape */}
+      <div className="shape-wrap">
+        <div className="b-shape-1">
+          <Image
+            src={require("../../../public/assests/shape-1.png")}
+            width="100%"
+            height="100%"
+            alt=""
+            className="b-shape-1-bg"
           />
-          <div className="absolute flex items-center justify-center w-[50px] cursor-pointer h-[50px] right-0 top-0 rounded-r-[5px]"
-          onClick={handleSearch}
-          >
-            <BiSearch className="text-white bg-[#397CFD] p-[2px] rounded-lg " size={30} />
+        </div>
+        <div className="b-shape-2 sm:w-20">
+          <Image
+            src={require("../../../public/assests/shape-2.png")}
+            width="100%"
+            height="100%"
+            alt=""
+            className="b-shape-2-bg"
+          />
+        </div>
+        <div className="b-shape-3">
+          <Image
+            src={require("../../../public/assests/shape-3.png")}
+            width="100%"
+            height="100%"
+            alt=""
+            className="b-shape-3-bg"
+          />
+        </div>
+        <div className="b-shape-4">
+          <Image
+            src={require("../../../public/assests/shape-4.png")}
+            width="100%"
+            height="100%"
+            alt=""
+            className="b-shape-4-bg"
+          />
+        </div>
+      </div>
+      <div className="container">
+        <div className="flex flex-col-reverse md:flex-row items-center trigger-hero-wrap">
+          <div className="md:w-7/12 lg:w-7/12 px-3 relative text-center md:text-left">
+            <h2 className="text-6xl font-bold text-wrap text-[#2c234d] mb-2 md:mb-5 hero-txt">Learn The Art of Programming</h2>
+            <p className="mb-5 text-wrap">Discover the journey of mastering programming syntax and logic, where every line of code unlocks new possibilities.</p>
+            <Link  href={'#'}>
+              <button className="px-5 bg-blue-700 rounded-lg pb-4 pt-3 cursor-pointer text-white">
+                View Course
+              </button>
+            </Link>
+          </div>
+          <div className="md:w-12/12 lg:w-7/12 px-3">
+            <div className="flex justify-center items-center relative w-full" style={{ width: '100%' }}>
+              <Image
+                src={require("../../../public/assests/triggerup-hero.svg")}
+                width="100%"
+                height="100%"
+                alt=""
+                // className="hero-image"
+                layout="responsive"
+              />
+              <Image
+                src={require("../../../public/assests/book.svg")}
+                width={100}
+                alt=""
+                className="w-50 h-auto hero-image absolute bottom-right floating img-flt"
+              />
+              <Image
+                 src={require("../../../public/assests/money.svg")}
+                width={100}
+                alt=""
+                className="w-50 h-auto hero-image absolute top-left floating img-flt"
+              />
+              <Image
+                 src={require("../../../public/assests/target.svg")}
+                width={100}
+                alt=""
+                className="w-50 h-auto hero-image absolute bottom-left floating img-flt"
+              />
+              <Image
+                 src={require("../../../public/assests/calender.svg")}
+                width={100}
+                alt=""
+                className="w-50 h-auto hero-image absolute top-right floating img-flt"
+              />
+            </div>
           </div>
         </div>
-        <br />
-        <br />
-        <div className="1500px:w-[55%] 1100px:w-[78%] w-[90%] flex items-center mx-auto md:mx-0">
-          <Image
-            src={require("../../../public/assests/client-1.jpg")}
-            alt=""
-            className="rounded-full "
-          />
-          <Image
-            src={require("../../../public/assests/client-2.jpg")}
-            alt=""
-            className="rounded-full ml-[-20px]"
-          />
-          <Image
-            src={require("../../../public/assests/client-3.jpg")}
-            alt=""
-            className="rounded-full ml-[-20px]"
-          />
-          <p className="font-Josefin text-[#000000b3] 1000px:pl-3 1000px:text-[18px] 1000p:font-[600] text-[15px">
-            500K+ People already trusted us.{" "}
-            <Link
-              href="/courses"
-              className="dark:text-[#46e256] text-[#397CFD]"
-            >
-              View Courses
-            </Link>{" "}
-          </p>
-        </div>
-        <br />
-
       </div>
-    </div>
+    </section>
     )
    }
    </>
