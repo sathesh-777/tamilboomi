@@ -1,5 +1,8 @@
 "use client";
 import "./globals.css";
+import "./styles/course.css";
+import "./styles/hero.css";
+import "./styles/navbar.css";
 import "react-quill/dist/quill.snow.css";
 import { Poppins } from "next/font/google";
 import { Josefin_Sans } from "next/font/google";
