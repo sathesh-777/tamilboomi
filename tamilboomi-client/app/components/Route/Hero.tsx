@@ -36,8 +36,8 @@ const Hero: FC<Props> = (props) => {
         <div className="b-shape-1">
           <Image
             src={require("../../../public/assests/shape-1.png")}
-            width="100%"
-            height="100%"
+            width={100}
+            height={100}
             alt=""
             className="b-shape-1-bg"
           />
@@ -45,8 +45,8 @@ const Hero: FC<Props> = (props) => {
         <div className="b-shape-2 sm:w-20">
           <Image
             src={require("../../../public/assests/shape-2.png")}
-            width="100%"
-            height="100%"
+            width={100}
+            height={100}
             alt=""
             className="b-shape-2-bg"
           />
@@ -54,8 +54,8 @@ const Hero: FC<Props> = (props) => {
         <div className="b-shape-3">
           <Image
             src={require("../../../public/assests/shape-3.png")}
-            width="100%"
-            height="100%"
+            width={100}
+            height={100}
             alt=""
             className="b-shape-3-bg"
           />
@@ -63,8 +63,8 @@ const Hero: FC<Props> = (props) => {
         <div className="b-shape-4">
           <Image
             src={require("../../../public/assests/shape-4.png")}
-            width="100%"
-            height="100%"
+            width={100}
+            height={100}
             alt=""
             className="b-shape-4-bg"
           />
@@ -85,8 +85,8 @@ const Hero: FC<Props> = (props) => {
             <div className="flex justify-center items-center relative w-full" style={{ width: '100%' }}>
               <Image
                 src={require("../../../public/assests/triggerup-hero.svg")}
-                width="100%"
-                height="100%"
+                width={100}
+                height={100}
                 alt=""
                 // className="hero-image"
                 layout="responsive"
