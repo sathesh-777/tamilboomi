@@ -36,6 +36,9 @@ const CreateCourse = (props: Props) => {
     estimatedPrice: "",
     tags: "",
     level: "",
+    stack: "",
+    language: "",
+    duration: "",
     categories:"",
     demoUrl: "",
     thumbnail: "",
@@ -99,6 +102,9 @@ const CreateCourse = (props: Props) => {
       tags: courseInfo.tags,
       thumbnail: courseInfo.thumbnail,
       level: courseInfo.level,
+      stack: courseInfo.stack,
+      duration: courseInfo.duration,
+      language: courseInfo.language,
       demoUrl: courseInfo.demoUrl,
       totalVideos: courseContentData.length,
       benefits: formattedBenefits,
@@ -116,7 +122,7 @@ const CreateCourse = (props: Props) => {
   };
 
   return (
-    <div className="w-full flex min-h-screen">
+    <div className="w-full flex min-h-screen bg-white">
       <div className="w-[80%]">
         {active === 0 && (
           <CourseInformation

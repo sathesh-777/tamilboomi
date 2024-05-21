@@ -31,7 +31,7 @@ const Blog = (props: Props) => {
           <p className={styles.label}>
             Stay informed about the ever-evolving world of technology. Our blog
             covers a wide range of topics, from AI and web development to
-            blockchain and data science.
+            blockchain and data science
           </p>
         </div>
         <br />

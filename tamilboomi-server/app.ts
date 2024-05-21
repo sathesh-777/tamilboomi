@@ -34,9 +34,17 @@ app.use(cookieParser());
 // }));
 
 
+const allowedOrigins = ['https://tamilboomi.triggerupacademy.com','http://localhost:3000'];
+
 app.use(cors({
-  origin: process.env.ORIGIN || "https://triggerupacademy.com",
-  credentials: true, // if your front-end needs to send cookies
+  origin: (origin, callback) => {
+      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+          callback(null, true);
+      } else {
+          callback(new Error('Not allowed by CORS'));
+      }
+  },
+  credentials: true,
 }));
 
 // api requests limit

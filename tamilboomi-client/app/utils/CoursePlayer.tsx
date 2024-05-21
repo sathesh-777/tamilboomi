@@ -7,10 +7,11 @@ type Props = {
 
 const CoursePlayer: FC<Props> = ({ videoUrl }) => {
   // Assuming videoUrl is a YouTube video URL like "https://www.youtube.com/watch?v=VIDEO_ID"
-  const videoId = videoUrl.split("v=")[1];
+  // const videoId = videoUrl.split("v=")[1];
+  const videoId = videoUrl;
 
   return (
-    <div style={{ position: "relative", paddingBottom: "56.25%", overflow: "hidden" }}>
+    <div style={{ position: "relative", paddingBottom: "56.25%", overflow: "hidden", borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }}>
       <iframe
         src={`https://www.youtube.com/embed/${videoId}`}
         frameBorder="0"

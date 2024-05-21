@@ -43,9 +43,11 @@ const EditCategories = (props: Props) => {
   };
 
   const newCategoriesHandler = () => {
-    if (categories[categories.length - 1].title === "") {
+    // Check if the last element exists and its title is empty
+    if (categories.length > 0 && categories[categories.length - 1].title === "") {
       toast.error("Category title cannot be empty");
     } else {
+      // If the last element does not exist or its title is not empty, add a new category
       setCategories((prevCategory: any) => [...prevCategory, { title: "" }]);
     }
   };

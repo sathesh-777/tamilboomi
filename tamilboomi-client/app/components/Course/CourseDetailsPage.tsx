@@ -5,6 +5,7 @@ import Heading from "@/app/utils/Heading";
 import Header from "../Header";
 import Footer from "../Footer";
 import CourseDetails from "./CourseDetails";
+import Link from "next/link";
 import {
   useCreatePaymentIntentMutation,
   useGetStripePublishablekeyQuery,
@@ -65,6 +66,26 @@ const CourseDetailsPage = ({ id }: Props) => {
             setOpen={setOpen}
             activeItem={1}
           />
+          <section className="course-overview">
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-12">
+                  <h2 className="text-7xl">Course</h2>
+                  <div className="bread-crumbs mt-3 flex flex-row gap-x-2">
+                    <Link href={"/"}>
+                      <span className="ms-2">Home</span>
+                    </Link>
+                    <span>/</span>
+                    <Link href={"/courses"}>
+                      <span className="ms-2">Courses</span>
+                    </Link>
+                    <span>/</span>
+                    <p>{data?.course?.name}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
           {stripePromise && (
             <CourseDetails
               data={data.course}

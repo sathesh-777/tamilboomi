@@ -188,20 +188,27 @@ const CourseInformation: FC<Props> = ({
         <br />
         <div className="w-full flex justify-between">
           <div className="w-[45%]">
-            <label className={`${styles.label}`}>Course Level</label>
-            <input
-              type="text"
+            <label className={`${styles.label} w-[50%]`}>Course Level</label>
+            <select
               name=""
+              id=""
+              className={`${styles.input}`}
               value={courseInfo.level}
-              required
               onChange={(e: any) =>
                 setCourseInfo({ ...courseInfo, level: e.target.value })
               }
-              id="level"
-              placeholder="Beginner/Intermediate/Expert"
-              className={`
-            ${styles.input}`}
-            />
+            >
+              <option value="">Select Level</option>
+              <option value="Beginner" key="Beginner">
+                Beginner
+              </option>
+              <option value="Intermediate" key="Intermediate">
+                Intermediate
+              </option>
+              <option value="Advanced" key="Advanced">
+                Advanced
+              </option>
+            </select>
           </div>
           <div className="w-[50%]">
             <label className={`${styles.label} w-[50%]`}>Demo Url</label>
@@ -221,6 +228,67 @@ const CourseInformation: FC<Props> = ({
           </div>
         </div>
         <br />
+        <div className="w-full flex justify-between">
+          <div className="w-[45%]">
+            <label className={`${styles.label} w-[50%]`}>Course Stack</label>
+            <select
+              name=""
+              id=""
+              className={`${styles.input}`}
+              value={courseInfo.stack}
+              onChange={(e: any) =>
+                setCourseInfo({ ...courseInfo, stack: e.target.value })
+              }
+            >
+              <option value="">Select Stack</option>
+              <option value="FrontEnd" key="FrontEnd">
+                FrontEnd
+              </option>
+              <option value="BackEnd" key="BackEnd">
+                BackEnd
+              </option>
+              <option value="FullStack" key="FullStack">
+                FullStack
+              </option>
+            </select>
+          </div>
+          <div className="w-[50%]">
+            <label className={`${styles.label} w-[50%]`}>Course Duration</label>
+            <input
+              type="text"
+              name=""
+              required
+              value={courseInfo.duration}
+              onChange={(e: any) =>
+                setCourseInfo({ ...courseInfo, duration: e.target.value })
+              }
+              id="duration"
+              placeholder="12 hours"
+              className={`
+            ${styles.input}`}
+            />
+          </div>
+        </div>
+        <br />  
+        <div className="w-full flex justify-between">
+          <div className="w-[50%]">
+            <label className={`${styles.label} w-[50%]`}>Course language</label>
+            <input
+              type="text"
+              name=""
+              required
+              value={courseInfo.language}
+              onChange={(e: any) =>
+                setCourseInfo({ ...courseInfo, language: e.target.value })
+              }
+              id="language"
+              placeholder="language"
+              className={`
+            ${styles.input}`}
+            />
+          </div>
+        </div>
+        <br />
         <div className="w-full">
           <input
             type="file"
@@ -231,7 +299,7 @@ const CourseInformation: FC<Props> = ({
           />
           <label
             htmlFor="file"
-            className={`w-full min-h-[10vh] dark:border-white border-[#00000026] p-3 border flex items-center justify-center ${
+            className={`w-full min-h-[10vh] border-[#00000026] p-3 border flex items-center justify-center ${
               dragging ? "bg-blue-500" : "bg-transparent"
             }`}
             onDragOver={handleDragOver}
@@ -245,7 +313,7 @@ const CourseInformation: FC<Props> = ({
                 className="max-h-full w-full object-cover"
               />
             ) : (
-              <span className="text-black dark:text-white">
+              <span className="text-black">
                 Drag and drop your thumbnail here or click to browse
               </span>
             )}
