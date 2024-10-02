@@ -36,7 +36,7 @@ const CourseDetailsPage = ({ id }: Props) => {
     if (data && userData?.user) {
       const amount = Math.round(data.course.price * 100);
       const currency = "INR";
-      createPaymentIntent({ amount, currency });
+      createPaymentIntent({amount, currency});
     }
   }, [config, data, userData]);
 
@@ -53,7 +53,7 @@ const CourseDetailsPage = ({ id }: Props) => {
       ) : (
         <div>
           <Heading
-            title={data?.course?.name + " - Tamilboomi"}
+         title={data?.course?.name + " - Tamilboomi"}
             description={
               "ELearning is a programming community which is developed by shahriar sajeeb for helping programmers"
             }
